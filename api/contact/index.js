@@ -8,7 +8,7 @@ const TO_ADDRESS = "info@quantixanalitic.com";
 // Remitente verificado en el recurso ACS de viewQ.
 // Se rellena tras detectar el dominio verificado (ver ARCHITECTURE / reporte de despliegue).
 // Permite override por app setting opcional ACS_SENDER_ADDRESS sin tocar código.
-const SENDER_ADDRESS = process.env.ACS_SENDER_ADDRESS || "__PENDING_VERIFIED_SENDER__";
+const SENDER_ADDRESS = process.env.ACS_SENDER_ADDRESS || "DoNotReply@mail.quantixanalitic.com";
 
 // Límites de longitud (defensa básica anti-abuso).
 const LIMITS = { name: 120, email: 200, message: 5000 };
