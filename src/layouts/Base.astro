@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+  </head>
+  <body>
+    <div class="ribbon">Iniciativa <b>AgriFoodTech</b> · tecnología para la cadena agroalimentaria de América Latina</div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a href="/" class="logo">QUANTIX <b>ANALYTIC</b></a>
+      <nav class="links">
+        <a href="/viewq" class="vq">viewQ</a>
+        <a href="/#productos">Productos</a>
+        <a href="/servicios">Servicios</a>
+        <a href="/nosotros">Nosotros</a>
+        <a class="btn btn-primary" href="/contacto" style="padding:9px 18px">Hablemos</a>
+      </nav>
+    </div></header>
+
+    <slot />
+
+    <footer><div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="logo">QUANTIX <b>ANALYTIC</b></div>
+          <p style="color:#aebfcd;max-width:300px;margin:0 0 10px">Tecnología AgriFoodTech para el agro de América Latina.</p>
+          <p style="color:#8ba0b4;font-size:13px;margin:0">Cra. 10b #134a-35, Bogotá D.C., Colombia</p>
+        </div>
+        <div>
+          <h5>Productos y servicios</h5>
+          <a href="/viewq">viewQ</a><a href="/quantix-flow">Quantix Flow</a>
+          <a href="/qjuridico">QJurídico</a><a href="/qlinic">Qlinic</a>
+          <a href="/servicios">Servicios</a>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <a href="https://quantixanalitic.com">quantixanalitic.com</a>
+          <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a>
+          <a href="https://wa.me/573164749204">WhatsApp +57 316 474 9204</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Quantix Analitic S.A.S. · Bogotá D.C., Colombia</span>
+        <span>viewQ · Quantix Flow · QJurídico</span>
+      </div>
+    </div></footer>
+  </body>
+</html>
