@@ -1,0 +1,12 @@
+{
+  "name": "quantix-web-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Azure Functions (managed) para quantix-web: endpoint de contacto vía Azure Communication Services Email.",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@azure/communication-email": "^1.0.0"
+  }
+}
