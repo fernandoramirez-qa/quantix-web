@@ -100,6 +100,8 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Plausible Analytics (sin cookies): páginas vistas + clics salientes (WhatsApp/email/viewQ) -->
+    <script defer data-domain="quantixanalitic.com" src="https://plausible.io/js/script.outbound-links.js" is:inline></script>
     {detect && (
       <script is:inline define:vars={{ esHome: esPath }}>
         // Detección de idioma del navegador SOLO en la primera visita a la raíz.
