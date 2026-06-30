@@ -1,0 +1,27 @@
+---
+import { t, getLangFromUrl, localizedPath } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const model = (key: string) => `${t('serv.model.label', lang)} ${t(key, lang)}`;
+---
+<section class="phead"><div class="wrap">
+  <div class="eyebrow2">{t('serv.head.eyebrow', lang)}</div>
+  <h1>{t('serv.head.title', lang)}</h1>
+  <p class="lead">{t('serv.head.lead', lang)}</p>
+</div></section>
+<section class="sec"><div class="wrap"><div class="grid3">
+  <div class="card"><div class="ic">Q</div><h3>{t('serv.s1.t', lang)}</h3><p>{t('serv.s1.d', lang)}</p>
+    <ul><li>{t('serv.li.dashboards', lang)}</li><li>{t('serv.li.profit', lang)}</li><li>{t('serv.li.agro', lang)}</li><li>{t('serv.li.aiinsights', lang)}</li></ul><div class="model">{model('serv.s1.model')}</div></div>
+  <div class="card"><div class="ic">&lt;/&gt;</div><h3>{t('serv.s2.t', lang)}</h3><p>{t('serv.s2.d', lang)}</p>
+    <ul><li>{t('serv.li.arch', lang)}</li><li>{t('serv.li.sources', lang)}</li><li>{t('serv.li.stack', lang)}</li><li>{t('serv.li.db', lang)}</li></ul><div class="model">{model('serv.s2.model')}</div></div>
+  <div class="card"><div class="ic">▦</div><h3>{t('serv.s3.t', lang)}</h3><p>{t('serv.s3.d', lang)}</p>
+    <ul><li>{t('serv.li.bidash', lang)}</li><li>{t('serv.li.etl', lang)}</li><li>{t('serv.li.refresh', lang)}</li><li>{t('serv.li.publish', lang)}</li></ul><div class="model">{model('serv.s3.model')}</div></div>
+  <div class="card"><div class="ic">◷</div><h3>{t('serv.s4.t', lang)}</h3><p>{t('serv.s4.d', lang)}</p>
+    <ul><li>{t('serv.li.predict', lang)}</li><li>{t('serv.li.patterns', lang)}</li><li>{t('serv.li.recsys', lang)}</li><li>{t('serv.li.embed', lang)}</li></ul><div class="model">{model('serv.s4.model')}</div></div>
+  <div class="card"><div class="ic">⤓</div><h3>{t('serv.s5.t', lang)}</h3><p>{t('serv.s5.d', lang)}</p>
+    <ul><li>{t('serv.li.autorep', lang)}</li><li>{t('serv.li.schedule', lang)}</li><li>{t('serv.li.internal', lang)}</li></ul><div class="model">{model('serv.s5.model')}</div></div>
+  <div class="card"><div class="ic">✦</div><h3>{t('serv.s6.t', lang)}</h3><p>{t('serv.s6.d', lang)}</p>
+    <ul><li>{t('serv.li.maturity', lang)}</li><li>{t('serv.li.techarch', lang)}</li><li>{t('serv.li.roadmap', lang)}</li><li>{t('serv.li.governance', lang)}</li></ul><div class="model">{model('serv.s6.model')}</div></div>
+</div></div></section>
+<section class="ctaband"><div class="wrap"><h2>{t('serv.cta.title', lang)}</h2>
+  <p>{t('serv.cta.sub', lang)}</p>
+  <a class="btn btn-light" href={localizedPath('contacto', lang)}>{t('common.cta.contactUs', lang)} →</a></div></section>

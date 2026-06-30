@@ -1,0 +1,16 @@
+---
+import { t, getLangFromUrl, localizedPath } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+---
+<section class="phead"><div class="wrap">
+  <div class="eyebrow2">{t('jur.head.eyebrow', lang)}</div>
+  <h1>{t('jur.head.title', lang)}</h1>
+  <p class="lead">{t('jur.head.lead', lang)}</p>
+</div></section>
+<section class="sec"><div class="wrap"><div class="grid3">
+  <div class="card"><div class="ic" style="background:var(--navy2)">⌕</div><h3>{t('jur.c1.t', lang)}</h3><p>{t('jur.c1.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:var(--navy2)">▤</div><h3>{t('jur.c2.t', lang)}</h3><p>{t('jur.c2.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:var(--navy2)">⚖</div><h3>{t('jur.c3.t', lang)}</h3><p>{t('jur.c3.d', lang)}</p></div>
+</div></div></section>
+<section class="ctaband"><div class="wrap"><h2>{t('jur.cta.title', lang)}</h2>
+  <p>{t('jur.cta.sub', lang)}</p><a class="btn btn-light" href={localizedPath('contacto', lang)}>{t('common.cta.contactUs', lang)} →</a></div></section>

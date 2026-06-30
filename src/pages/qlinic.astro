@@ -1,35 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import Qlinic from '../components/pages/Qlinic.astro';
 ---
-<Base
-  title="Qlinic · Quantix Analitic"
-  description="Qlinic — historias clínicas, agenda médica y salud ocupacional para clínicas, IPS y empresas: seguro, trazable y en un solo lugar."
->
-  <section class="phead" style="background:linear-gradient(180deg,#EAF3FC,#fff)"><div class="wrap">
-    <div class="eyebrow2" style="color:#12517f">Producto · Salud</div>
-    <h1>Qlinic — Historias clínicas y salud ocupacional</h1>
-    <p class="lead">Plataforma para clínicas, IPS y empresas de salud ocupacional: historias clínicas, agenda médica, flujo de exámenes ocupacionales y reportes a empresas — en un solo lugar, segura y trazable.</p>
-  </div></section>
-  <section class="sec"><div class="wrap"><div class="grid3">
-    <div class="card"><div class="ic" style="background:#1C6FB5">✚</div><h3>Historias clínicas</h3>
-      <p>Historia clínica y ocupacional centralizada, con seguimiento y evolución del paciente.</p></div>
-    <div class="card"><div class="ic" style="background:#1C6FB5">🗓</div><h3>Agenda y citas</h3>
-      <p>Programación de médicos, control de cumplimiento de citas y recordatorios.</p></div>
-    <div class="card"><div class="ic" style="background:#1C6FB5">⚕</div><h3>Salud ocupacional</h3>
-      <p>Flujo completo: orden → ejecución → resultados → concepto de aptitud → certificado.</p></div>
-    <div class="card"><div class="ic" style="background:#1C6FB5">⇄</div><h3>Integraciones (API)</h3>
-      <p>Recepción de exámenes clínicos e información médica de laboratorios y sistemas externos.</p></div>
-    <div class="card"><div class="ic" style="background:#1C6FB5">▤</div><h3>Reportes a empresas</h3>
-      <p>Informes de salud ocupacional y descarga de certificados de aptitud por empresa.</p></div>
-    <div class="card"><div class="ic" style="background:#1C6FB5">◎</div><h3>Captura en sitio</h3>
-      <p>Toma de pacientes para exámenes ocupacionales en las empresas, también desde móvil.</p></div>
-  </div></div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap">
-    <div class="feat" style="background:#EAF3FC;border-color:#cfe0f3">
-      <b style="color:#12517f">Diseñado para el sector salud</b>
-      <p>Construido con la normativa colombiana de historia clínica y protección de datos de salud (Habeas Data), con control de acceso por rol y auditoría.</p>
-    </div>
-  </div></section>
-  <section class="ctaband" style="background:#1C6FB5"><div class="wrap"><h2>¿Su clínica o empresa quiere conocer Qlinic?</h2>
-    <p>Agende una demostración.</p><a class="btn btn-light" href="/contacto" style="color:#12517f">Solicitar demo →</a></div></section>
+<Base titleKey="cli.title" descKey="cli.head.lead" slug="qlinic">
+  <Qlinic />
 </Base>

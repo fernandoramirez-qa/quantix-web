@@ -1,0 +1,31 @@
+---
+import { t, getLangFromUrl, localizedPath } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+---
+<section class="phead" style="background:linear-gradient(180deg,#EAF3FC,#fff)"><div class="wrap">
+  <div class="eyebrow2" style="color:#12517f">{t('cli.head.eyebrow', lang)}</div>
+  <h1>{t('cli.head.title', lang)}</h1>
+  <p class="lead">{t('cli.head.lead', lang)}</p>
+</div></section>
+<section class="sec"><div class="wrap"><div class="grid3">
+  <div class="card"><div class="ic" style="background:#1C6FB5">✚</div><h3>{t('cli.c1.t', lang)}</h3>
+    <p>{t('cli.c1.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:#1C6FB5">🗓</div><h3>{t('cli.c2.t', lang)}</h3>
+    <p>{t('cli.c2.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:#1C6FB5">⚕</div><h3>{t('cli.c3.t', lang)}</h3>
+    <p>{t('cli.c3.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:#1C6FB5">⇄</div><h3>{t('cli.c4.t', lang)}</h3>
+    <p>{t('cli.c4.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:#1C6FB5">▤</div><h3>{t('cli.c5.t', lang)}</h3>
+    <p>{t('cli.c5.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:#1C6FB5">◎</div><h3>{t('cli.c6.t', lang)}</h3>
+    <p>{t('cli.c6.d', lang)}</p></div>
+</div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="feat" style="background:#EAF3FC;border-color:#cfe0f3">
+    <b style="color:#12517f">{t('cli.compliance.b', lang)}</b>
+    <p>{t('cli.compliance.d', lang)}</p>
+  </div>
+</div></section>
+<section class="ctaband" style="background:#1C6FB5"><div class="wrap"><h2>{t('cli.cta.title', lang)}</h2>
+  <p>{t('cli.cta.sub', lang)}</p><a class="btn btn-light" href={localizedPath('contacto', lang)} style="color:#12517f">{t('common.cta.requestDemo', lang)}</a></div></section>

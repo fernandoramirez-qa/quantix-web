@@ -20,6 +20,12 @@ header.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);bac
 nav.links{display:flex;gap:26px;align-items:center}
 nav.links a{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.82} nav.links a:hover{opacity:1;color:var(--teal-d)}
 nav.links a.vq{color:var(--forest)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang-switch{display:inline-flex;align-items:center;gap:3px;font-size:13px;font-weight:800;letter-spacing:.3px}
+.lang-switch a{padding:4px 8px;border-radius:7px;color:var(--mute);opacity:.85}
+.lang-switch a:hover{color:var(--teal-d);opacity:1}
+.lang-switch a.active{color:var(--navy);background:var(--mint);opacity:1}
+.lang-switch .sep{color:var(--line)}
 @media(max-width:860px){nav.links{display:none}}
 .phead{background:linear-gradient(180deg,var(--cream),#fff);padding:54px 0 30px}
 .eyebrow2{font-size:12.5px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal-d)}
