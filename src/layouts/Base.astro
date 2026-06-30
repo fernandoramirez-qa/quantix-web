@@ -3,19 +3,18 @@ import '../styles/global.css';
 import { t, getLangFromUrl, localizedPath, languages, defaultLang } from '../i18n/ui';
 
 interface Props {
-  titleKey?: string;
+  seoKey?: string;          // 'home','viewq','serv','flow','jur','cli','about','contact' → seo.<seoKey>.title/desc
   titleText?: string;       // título literal (p. ej. el 404 bilingüe, sin clave)
-  descKey?: string;
   slug?: string;            // '' = home; 'viewq', 'servicios', ...
   canonicalOverride?: string;
   is404?: boolean;
 }
 
-const { titleKey, titleText, descKey, slug = '', canonicalOverride, is404 = false } = Astro.props;
+const { seoKey, titleText, slug = '', canonicalOverride, is404 = false } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
-const title = titleText ?? (titleKey ? t(titleKey, lang) : '');
-const description = descKey ? t(descKey, lang) : undefined;
+const title = titleText ?? (seoKey ? t(`seo.${seoKey}.title`, lang) : '');
+const description = seoKey ? t(`seo.${seoKey}.desc`, lang) : undefined;
 
 // Rutas de la MISMA página en cada idioma (para selector + hreflang).
 const enPath = localizedPath(slug, 'en');
@@ -26,6 +25,44 @@ const esUrl = new URL(esPath, Astro.site).href;
 const canonical = canonicalOverride ?? (lang === defaultLang ? enUrl : esUrl);
 const homeHref = localizedPath('', lang);
 const detect = lang === defaultLang && slug === '' && !is404; // detección de idioma solo en la raíz EN
+
+// Open Graph / Twitter
+const siteName = t('site.name', lang);
+const ogAlt = t('site.ogAlt', lang);
+const ogImage = new URL('/og-image.png', Astro.site).href;
+const ogLocale = lang === 'es' ? 'es_CO' : 'en_US';
+
+// Schema.org JSON-LD: Organization en todas las páginas; SoftwareApplication en viewQ.
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Quantix Analitic S.A.S.',
+  url: 'https://www.quantixanalitic.com',
+  logo: 'https://www.quantixanalitic.com/favicon-512x512.png',
+  description:
+    'Software AgriFoodTech y soluciones de datos e IA para el sector agroalimentario y empresarial.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Cra. 10b #134a-35',
+    addressLocality: 'Bogotá',
+    addressCountry: 'CO',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'info@quantixanalitic.com',
+    contactType: 'sales',
+  },
+};
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'viewQ',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://www.quantixanalitic.com/viewq',
+  publisher: { '@type': 'Organization', name: 'Quantix Analitic S.A.S.' },
+};
+const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -38,6 +75,27 @@ const detect = lang === defaultLang && slug === '' && !is404; // detección de i
     {!is404 && <link rel="alternate" hreflang="en" href={enUrl} />}
     {!is404 && <link rel="alternate" hreflang="es" href={esUrl} />}
     {!is404 && <link rel="alternate" hreflang="x-default" href={enUrl} />}
+    {!is404 && (
+      <>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={siteName} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:alt" content={ogAlt} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content={ogLocale} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+      </>
+    )}
+    {schemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
