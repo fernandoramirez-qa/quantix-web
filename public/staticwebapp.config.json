@@ -5,13 +5,14 @@
     { "route": "/insights/*", "redirect": "/", "statusCode": 301 },
     { "route": "/es/desarrollo-software", "redirect": "/es/servicios", "statusCode": 301 },
     { "route": "/es/insights", "redirect": "/es/", "statusCode": 301 },
-    { "route": "/es/insights/*", "redirect": "/es/", "statusCode": 301 }
+    { "route": "/es/insights/*", "redirect": "/es/", "statusCode": 301 },
+    { "route": "/_astro/*", "headers": { "Cache-Control": "public, max-age=31536000, immutable" } }
   ],
   "responseOverrides": {
     "404": { "rewrite": "/404.html", "statusCode": 404 }
   },
   "globalHeaders": {
-    "Cache-Control": "public, max-age=3600, must-revalidate"
+    "Cache-Control": "no-cache"
   },
   "platform": {
     "apiRuntime": "node:20"
