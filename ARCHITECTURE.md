@@ -3,7 +3,7 @@
 > Ley del repositorio. Este documento manda. Si un cambio contradice estas reglas,
 > primero se actualiza este archivo (con justificación) y luego se hace el cambio.
 
-`quantix-web` es el **sitio corporativo de Quantix Analytic** (`quantixanalitic.com`),
+`quantix-web` es el **sitio corporativo de Quantix Analitic** (`quantixanalitic.com`),
 desplegado como **Azure Static Web App independiente** — separada de viewQ y del resto de
 productos. No comparte código, build ni dominio de despliegue con esos repos.
 
@@ -58,7 +58,7 @@ quantix-web/
 - Página viewQ lleva `<link rel="canonical" href="https://viewq.quantixanalitic.com">` para no
   competir en SEO con la landing del producto.
 - **Teléfono único** en todo el sitio: **+57 316 474 9204** · WhatsApp `https://wa.me/573164749204`.
-- **Razón social** (footer legal): **Quantix Analitic S.A.S.** · **Marca visible**: **Quantix Analytic**.
+- **Razón social** (footer legal): **Quantix Analitic S.A.S.** · **Marca visible**: **Quantix Analitic**.
 - **AgriFoodTech** = posicionamiento de **categoría**. No usar logos ni nombres de CCB / ANDI / UE,
   ni afirmar selección o participación en ningún programa.
 

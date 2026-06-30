@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "description": "Sitio corporativo de Quantix Analytic (quantixanalitic.com) — Astro estático.",
+  "description": "Sitio corporativo de Quantix Analitic (quantixanalitic.com) — Astro estático.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

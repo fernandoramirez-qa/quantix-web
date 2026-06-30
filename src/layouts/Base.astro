@@ -17,12 +17,19 @@ const { title, description, canonical } = Astro.props;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body>
     <div class="ribbon">Iniciativa <b>AgriFoodTech</b> · tecnología para la cadena agroalimentaria de América Latina</div>
 
     <header class="nav"><div class="wrap nav-in">
-      <a href="/" class="logo">QUANTIX <b>ANALYTIC</b></a>
+      <a href="/" class="logo" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none">
+        <img src="/assets/quantix-isotype.png" alt="Quantix Analitic" width="34" height="34" style="height:34px;width:auto;display:block" />
+        <span>QUANTIX <b>ANALITIC</b></span>
+      </a>
       <nav class="links">
         <a href="/viewq" class="vq">viewQ</a>
         <a href="/#productos">Productos</a>
@@ -37,7 +44,10 @@ const { title, description, canonical } = Astro.props;
     <footer><div class="wrap">
       <div class="foot-grid">
         <div>
-          <div class="logo">QUANTIX <b>ANALYTIC</b></div>
+          <div class="logo" style="display:inline-flex;align-items:center;gap:8px">
+            <img src="/assets/quantix-isotype.png" alt="Quantix Analitic" width="30" height="30" style="height:30px;width:auto;display:block" />
+            <span>QUANTIX <b>ANALITIC</b></span>
+          </div>
           <p style="color:#aebfcd;max-width:300px;margin:0 0 10px">Tecnología AgriFoodTech para el agro de América Latina.</p>
           <p style="color:#8ba0b4;font-size:13px;margin:0">Cra. 10b #134a-35, Bogotá D.C., Colombia</p>
         </div>
