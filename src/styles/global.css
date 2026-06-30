@@ -70,8 +70,16 @@ nav.links a.vq{color:var(--forest)}
 .form label{display:block;font-size:13px;font-weight:600;margin:0 0 5px;color:var(--ink)}
 .form input,.form textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font-size:14.5px;font-family:inherit;margin-bottom:14px}
 .form input:focus,.form textarea:focus{outline:none;border-color:var(--emerald)}
-.ctaband{background:var(--emerald);color:#fff;padding:44px 0;text-align:center}
-.ctaband h2{font-size:26px;margin:0 0 8px} .ctaband p{margin:0 0 20px;color:#eafff4}
+/* franja CTA de cierre: cream con borde, título navy, botón forest (contraste con footer navy) */
+.ctaband{background:var(--cream);color:var(--navy);padding:44px 0;text-align:center;border-top:1px solid #E7DCC9;border-bottom:1px solid #E7DCC9}
+.ctaband h2{font-size:26px;margin:0 0 8px;color:#13233B} .ctaband p{margin:0 0 20px;color:#6b7a70}
+.ctaband .btn{background:var(--forest);color:#fff} .ctaband .btn:hover{background:#0c3e2b}
+/* bloque "Cómo trabajamos": 3 pilares con viñeta hexagonal */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:760px){.work-grid{grid-template-columns:1fr}}
+.work-item .hex{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--mint);color:var(--forest);font-size:18px;font-weight:900;margin-bottom:12px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.work-item h4{margin:0 0 5px;color:var(--navy);font-size:16px}
+.work-item p{margin:0;color:var(--mute);font-size:14px}
 footer{background:var(--navy);color:#c4d4e0;padding:44px 0 24px;font-size:14px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:26px}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
