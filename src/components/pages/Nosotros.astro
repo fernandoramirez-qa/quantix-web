@@ -31,12 +31,11 @@ const lang = getLangFromUrl(Astro.url);
   </div>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="founder">
-    <div class="av">JR</div>
-    <div>
-      <div class="nm">Jose Fernando Ramírez Gómez</div>
-      <div class="rl">{t('about.founder.role', lang)}</div>
-      <div class="ds">{t('about.founder.desc', lang)}</div>
-    </div>
+  <h3 style="color:var(--navy);font-size:21px;margin:0 0 16px">{t('work.title', lang)}</h3>
+  <div class="feat-grid">
+    <div class="feat"><b>{t('work.p1.t', lang)}</b><p>{t('work.p1.d', lang)}</p></div>
+    <div class="feat"><b>{t('work.p2.t', lang)}</b><p>{t('work.p2.d', lang)}</p></div>
+    <div class="feat"><b>{t('work.p3.t', lang)}</b><p>{t('work.p3.d', lang)}</p></div>
   </div>
+  <p style="margin:22px 0 0;color:var(--mute);font-size:14px">{t('about.founder.line', lang)}</p>
 </div></section>

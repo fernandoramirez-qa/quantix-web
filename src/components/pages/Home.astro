@@ -89,18 +89,15 @@ const lang = getLangFromUrl(Astro.url);
   <div class="eco">{t('home.aft.eco', lang)}</div>
 </div></section>
 
-<section class="sec" id="nosotros"><div class="wrap about-grid about">
-  <div>
-    <h2>{t('home.about.title', lang)}</h2>
-    <p>{t('home.about.p1', lang)}</p>
-    <p>{t('home.about.p2', lang)}</p>
-  </div>
-  <div class="founder">
-    <div class="av">JR</div>
-    <div>
-      <div class="nm">Jose Fernando Ramírez Gómez</div>
-      <div class="rl">{t('home.about.founder.role', lang)}</div>
-    </div>
+<section class="sec" id="nosotros"><div class="wrap about">
+  <h2>{t('home.about.title', lang)}</h2>
+  <p>{t('home.about.p1', lang)}</p>
+  <p>{t('home.about.p2', lang)}</p>
+  <h3 class="work-title">{t('work.title', lang)}</h3>
+  <div class="feat-grid">
+    <div class="feat"><b>{t('work.p1.t', lang)}</b><p>{t('work.p1.d', lang)}</p></div>
+    <div class="feat"><b>{t('work.p2.t', lang)}</b><p>{t('work.p2.d', lang)}</p></div>
+    <div class="feat"><b>{t('work.p3.t', lang)}</b><p>{t('work.p3.d', lang)}</p></div>
   </div>
 </div></section>
 
@@ -180,16 +177,10 @@ const lang = getLangFromUrl(Astro.url);
   .pillar h4{margin:0 0 5px;font-size:15.5px} .pillar p{margin:0;color:#aebfcd;font-size:13px}
   .aft .eco{margin-top:22px;color:#7fe0cf;font-weight:600;font-size:13.5px}
 
-  /* nosotros */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
-  @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+  /* nosotros / cómo trabajamos */
   .about h2{font-size:28px;color:var(--navy);margin:0 0 12px}
-  .about p{color:var(--mute);font-size:16px;margin:0 0 12px}
-  .founder{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:center}
-  .founder .av{width:62px;height:62px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;flex:none}
-  .founder .nm{font-weight:800;color:var(--navy);font-size:16.5px}
-  .founder .rl{color:var(--teal-d);font-weight:600;font-size:13px;margin:2px 0 6px}
-  .founder .ds{color:var(--mute);font-size:13px}
+  .about p{color:var(--mute);font-size:16px;margin:0 0 12px;max-width:760px}
+  .about .work-title{color:var(--navy);font-size:21px;margin:26px 0 14px}
 
   /* cta band */
   .ctaband{background:var(--emerald);color:#fff;padding:46px 0;text-align:center}
