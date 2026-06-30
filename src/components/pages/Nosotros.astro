@@ -1,0 +1,42 @@
+---
+import { t, getLangFromUrl } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+---
+<section class="phead"><div class="wrap">
+  <div class="eyebrow2">{t('about.head.eyebrow', lang)}</div>
+  <h1>{t('about.head.title', lang)}</h1>
+  <p class="lead">{t('about.head.lead', lang)}</p>
+</div></section>
+<section class="sec"><div class="wrap grid2">
+  <div class="card"><div class="ic" style="background:var(--emerald)">◎</div><h3>{t('about.mission.t', lang)}</h3>
+    <p style="margin:0">{t('about.mission.d', lang)}</p></div>
+  <div class="card"><div class="ic" style="background:var(--navy2)">◇</div><h3>{t('about.vision.t', lang)}</h3>
+    <p style="margin:0">{t('about.vision.d', lang)}</p></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap grid2 values">
+  <div>
+    <h3 style="color:var(--navy);font-size:21px;margin:0 0 16px">{t('about.values.title', lang)}</h3>
+    <div class="v"><div class="vi">✦</div><div><h4>{t('about.values.v1.t', lang)}</h4><p>{t('about.values.v1.d', lang)}</p></div></div>
+    <div class="v"><div class="vi">◎</div><div><h4>{t('about.values.v2.t', lang)}</h4><p>{t('about.values.v2.d', lang)}</p></div></div>
+    <div class="v"><div class="vi">↗</div><div><h4>{t('about.values.v3.t', lang)}</h4><p>{t('about.values.v3.d', lang)}</p></div></div>
+  </div>
+  <div>
+    <h3 style="color:var(--navy);font-size:21px;margin:0 0 16px">{t('about.why.title', lang)}</h3>
+    <div class="feat-grid" style="grid-template-columns:1fr 1fr">
+      <div class="feat"><b>{t('about.why.1.t', lang)}</b><p>{t('about.why.1.d', lang)}</p></div>
+      <div class="feat"><b>{t('about.why.2.t', lang)}</b><p>{t('about.why.2.d', lang)}</p></div>
+      <div class="feat"><b>{t('about.why.3.t', lang)}</b><p>{t('about.why.3.d', lang)}</p></div>
+      <div class="feat"><b>{t('about.why.4.t', lang)}</b><p>{t('about.why.4.d', lang)}</p></div>
+    </div>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="founder">
+    <div class="av">JR</div>
+    <div>
+      <div class="nm">Jose Fernando Ramírez Gómez</div>
+      <div class="rl">{t('about.founder.role', lang)}</div>
+      <div class="ds">{t('about.founder.desc', lang)}</div>
+    </div>
+  </div>
+</div></section>

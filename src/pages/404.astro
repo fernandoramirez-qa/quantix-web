@@ -1,16 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+// El 404 es estático y único: Azure SWA lo sirve para cualquier ruta inexistente
+// (con o sin prefijo /es/), así que es bilingüe — EN y ES en la misma página.
 ---
-<Base
-  title="Página no encontrada · Quantix Analitic"
-  description="La página que busca no existe o cambió de dirección."
->
+<Base titleText="Page not found · Página no encontrada · Quantix Analitic" is404={true}>
   <section class="phead"><div class="wrap" style="text-align:center">
     <div class="eyebrow2">Error 404</div>
-    <h1 style="margin-left:auto;margin-right:auto">Esta página no existe</h1>
-    <p class="lead" style="margin-left:auto;margin-right:auto">La dirección que buscó cambió o no está disponible. Volvamos a un lugar seguro.</p>
+    <h1 style="margin-left:auto;margin-right:auto">This page doesn’t exist · Esta página no existe</h1>
+    <p class="lead" style="margin-left:auto;margin-right:auto">
+      The address you requested has moved or is unavailable.<br />
+      La dirección que buscó cambió o no está disponible.
+    </p>
   </div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap" style="text-align:center">
-    <a class="btn btn-primary" href="/">Volver al inicio →</a>
+  <section class="sec" style="padding-top:0"><div class="wrap" style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-primary" href="/">Back to home →</a>
+    <a class="btn btn-ghost" href="/es/">Volver al inicio →</a>
   </div></section>
 </Base>

@@ -1,42 +1,89 @@
 ---
 import '../styles/global.css';
+import { t, getLangFromUrl, localizedPath, languages, defaultLang } from '../i18n/ui';
 
 interface Props {
-  title: string;
-  description?: string;
-  canonical?: string;
+  titleKey?: string;
+  titleText?: string;       // título literal (p. ej. el 404 bilingüe, sin clave)
+  descKey?: string;
+  slug?: string;            // '' = home; 'viewq', 'servicios', ...
+  canonicalOverride?: string;
+  is404?: boolean;
 }
 
-const { title, description, canonical } = Astro.props;
+const { titleKey, titleText, descKey, slug = '', canonicalOverride, is404 = false } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const title = titleText ?? (titleKey ? t(titleKey, lang) : '');
+const description = descKey ? t(descKey, lang) : undefined;
+
+// Rutas de la MISMA página en cada idioma (para selector + hreflang).
+const enPath = localizedPath(slug, 'en');
+const esPath = localizedPath(slug, 'es');
+const enUrl = new URL(enPath, Astro.site).href;
+const esUrl = new URL(esPath, Astro.site).href;
+
+const canonical = canonicalOverride ?? (lang === defaultLang ? enUrl : esUrl);
+const homeHref = localizedPath('', lang);
+const detect = lang === defaultLang && slug === '' && !is404; // detección de idioma solo en la raíz EN
 ---
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    {canonical && <link rel="canonical" href={canonical} />}
+    {!is404 && <link rel="canonical" href={canonical} />}
+    {!is404 && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {!is404 && <link rel="alternate" hreflang="es" href={esUrl} />}
+    {!is404 && <link rel="alternate" hreflang="x-default" href={enUrl} />}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {detect && (
+      <script is:inline define:vars={{ esHome: esPath }}>
+        // Detección de idioma del navegador SOLO en la primera visita a la raíz.
+        // El contenido EN se sirve igual en / (los crawlers lo ven); esto solo
+        // redirige a humanos con navegador en español, y recuerda la elección.
+        (function () {
+          try {
+            var KEY = 'qa_lang';
+            var stored = localStorage.getItem(KEY);
+            var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            var pref = stored || (nav.indexOf('es') === 0 ? 'es' : 'en');
+            if (pref === 'es') {
+              if (!stored) localStorage.setItem(KEY, 'es');
+              location.replace(esHome);
+            }
+          } catch (e) {}
+        })();
+      </script>
+    )}
   </head>
   <body>
-    <div class="ribbon">Iniciativa <b>AgriFoodTech</b> · tecnología para la cadena agroalimentaria de América Latina</div>
+    <div class="ribbon">{t('ribbon.text', lang)}</div>
 
     <header class="nav"><div class="wrap nav-in">
-      <a href="/" class="logo" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none">
+      <a href={homeHref} class="logo" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none">
         <img src="/assets/quantix-isotype.png" alt="Quantix Analitic" width="34" height="34" style="height:34px;width:auto;display:block" />
         <span>QUANTIX <b>ANALITIC</b></span>
       </a>
-      <nav class="links">
-        <a href="/viewq" class="vq">viewQ</a>
-        <a href="/#productos">Productos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/nosotros">Nosotros</a>
-        <a class="btn btn-primary" href="/contacto" style="padding:9px 18px">Hablemos</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="links">
+          <a href={localizedPath('viewq', lang)} class="vq">viewQ</a>
+          <a href={`${homeHref}#productos`}>{t('nav.products', lang)}</a>
+          <a href={localizedPath('servicios', lang)}>{t('nav.services', lang)}</a>
+          <a href={localizedPath('nosotros', lang)}>{t('nav.about', lang)}</a>
+          <a class="btn btn-primary" href={localizedPath('contacto', lang)} style="padding:9px 18px">{t('common.cta.talk', lang)}</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <a href={enPath} data-setlang="en" class={lang === 'en' ? 'active' : ''} aria-current={lang === 'en' ? 'true' : undefined} hreflang="en">{languages.en}</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href={esPath} data-setlang="es" class={lang === 'es' ? 'active' : ''} aria-current={lang === 'es' ? 'true' : undefined} hreflang="es">{languages.es}</a>
+        </div>
+      </div>
     </div></header>
 
     <slot />
@@ -48,26 +95,39 @@ const { title, description, canonical } = Astro.props;
             <img src="/assets/quantix-isotype.png" alt="Quantix Analitic" width="30" height="30" style="height:30px;width:auto;display:block" />
             <span>QUANTIX <b>ANALITIC</b></span>
           </div>
-          <p style="color:#aebfcd;max-width:300px;margin:0 0 10px">Tecnología AgriFoodTech para el agro de América Latina.</p>
-          <p style="color:#8ba0b4;font-size:13px;margin:0">Cra. 10b #134a-35, Bogotá D.C., Colombia</p>
+          <p style="color:#aebfcd;max-width:300px;margin:0 0 10px">{t('footer.tagline', lang)}</p>
+          <p style="color:#8ba0b4;font-size:13px;margin:0">{t('footer.address', lang)}</p>
         </div>
         <div>
-          <h5>Productos y servicios</h5>
-          <a href="/viewq">viewQ</a><a href="/quantix-flow">Quantix Flow</a>
-          <a href="/qjuridico">QJurídico</a><a href="/qlinic">Qlinic</a>
-          <a href="/servicios">Servicios</a>
+          <h5>{t('footer.h.products', lang)}</h5>
+          <a href={localizedPath('viewq', lang)}>viewQ</a><a href={localizedPath('quantix-flow', lang)}>Quantix Flow</a>
+          <a href={localizedPath('qjuridico', lang)}>QJurídico</a><a href={localizedPath('qlinic', lang)}>Qlinic</a>
+          <a href={localizedPath('servicios', lang)}>{t('nav.services', lang)}</a>
         </div>
         <div>
-          <h5>Contacto</h5>
+          <h5>{t('footer.h.contact', lang)}</h5>
           <a href="https://quantixanalitic.com">quantixanalitic.com</a>
           <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a>
           <a href="https://wa.me/573164749204">WhatsApp +57 316 474 9204</a>
         </div>
       </div>
       <div class="foot-bottom">
-        <span>© 2026 Quantix Analitic S.A.S. · Bogotá D.C., Colombia</span>
+        <span>{t('footer.legal', lang)}</span>
         <span>viewQ · Quantix Flow · QJurídico</span>
       </div>
     </div></footer>
+
+    <script is:inline>
+      // Recuerda la elección de idioma cuando el usuario usa el selector,
+      // para que la detección de la raíz no lo vuelva a forzar.
+      (function () {
+        document.addEventListener('click', function (e) {
+          var a = e.target && e.target.closest && e.target.closest('[data-setlang]');
+          if (a) {
+            try { localStorage.setItem('qa_lang', a.getAttribute('data-setlang')); } catch (_) {}
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

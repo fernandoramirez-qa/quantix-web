@@ -2,7 +2,10 @@
   "routes": [
     { "route": "/desarrollo-software", "redirect": "/servicios", "statusCode": 301 },
     { "route": "/insights", "redirect": "/", "statusCode": 301 },
-    { "route": "/insights/*", "redirect": "/", "statusCode": 301 }
+    { "route": "/insights/*", "redirect": "/", "statusCode": 301 },
+    { "route": "/es/desarrollo-software", "redirect": "/es/servicios", "statusCode": 301 },
+    { "route": "/es/insights", "redirect": "/es/", "statusCode": 301 },
+    { "route": "/es/insights/*", "redirect": "/es/", "statusCode": 301 }
   ],
   "responseOverrides": {
     "404": { "rewrite": "/404.html", "statusCode": 404 }

@@ -1,23 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import Servicios from '../components/pages/Servicios.astro';
 ---
-<Base
-  title="Servicios · Quantix Analitic"
-  description="Analítica de datos, IA y desarrollo de plataformas a la medida: del dato a la decisión, con tecnología moderna y escalable."
->
-  <section class="phead"><div class="wrap">
-    <div class="eyebrow2">Servicios</div>
-    <h1>Analítica de datos, IA y desarrollo de plataformas</h1>
-    <p class="lead">Más allá de nuestros productos, acompañamos a las empresas con soluciones a la medida: del dato a la decisión, con tecnología moderna y escalable.</p>
-  </div></section>
-  <section class="sec"><div class="wrap"><div class="grid3"><div class="card"><div class="ic">Q</div><h3>viewQ — Plataforma SaaS de inteligencia agrícola</h3><p>Nuestra solución principal: integra, analiza y visualiza datos operativos, financieros y técnicos en tiempo real.</p>
-        <ul><li>Dashboards ejecutivos y KPIs personalizados</li><li>Productividad, costos y rentabilidad</li><li>Módulos agro: nutrición, plagas, producción, georreferenciación</li><li>Insights automatizados con IA</li></ul><div class="model">Modelo: Suscripción mensual (SaaS)</div></div><div class="card"><div class="ic">&lt;/&gt;</div><h3>Desarrollo de plataformas de datos a la medida</h3><p>Diseño y construcción de soluciones para centralizar y explotar la información empresarial.</p>
-        <ul><li>Arquitectura de datos (data platforms)</li><li>Integración de múltiples fuentes (ERP, Excel, APIs, IoT)</li><li>Backend .NET / Python · frontend Angular</li><li>PostgreSQL / SQL Server · despliegue en Azure</li></ul><div class="model">Modelo: Proyecto cerrado o por fases</div></div><div class="card"><div class="ic">▦</div><h3>Dashboards ejecutivos e inteligencia de negocio (Power BI)</h3><p>Tableros interactivos para la toma de decisiones estratégicas.</p>
-        <ul><li>Dashboards financieros, operativos y estratégicos</li><li>Modelado de datos (ETL)</li><li>Automatización de actualizaciones</li><li>Publicación segura en Power BI Service</li></ul><div class="model">Modelo: Proyecto + soporte opcional</div></div><div class="card"><div class="ic">◷</div><h3>Analítica avanzada e inteligencia artificial aplicada</h3><p>Modelos analíticos para optimizar decisiones y anticipar escenarios.</p>
-        <ul><li>Modelos predictivos (producción, demanda, riesgos)</li><li>Análisis de patrones y tendencias</li><li>Sistemas de recomendación (fertilización, manejo agronómico)</li><li>Integración en plataformas empresariales</li></ul><div class="model">Modelo: Proyecto o integración con viewQ</div></div><div class="card"><div class="ic">⤓</div><h3>Automatización de reportes y procesos</h3><p>Optimización de la generación y distribución de información clave.</p>
-        <ul><li>Reportes automáticos (PDF, dashboards, alertas)</li><li>Envío programado a equipos gerenciales</li><li>Integración con sistemas internos</li></ul><div class="model">Modelo: Implementación + mantenimiento</div></div><div class="card"><div class="ic">✦</div><h3>Consultoría en estrategia de datos y transformación digital</h3><p>Acompañamiento para empresas que buscan ser data-driven.</p>
-        <ul><li>Diagnóstico de madurez analítica</li><li>Definición de arquitectura tecnológica</li><li>Roadmap de transformación digital</li><li>Gobierno de datos</li></ul><div class="model">Modelo: Consultoría por horas o por proyecto</div></div></div></div></section>
-  <section class="ctaband"><div class="wrap"><h2>¿Tiene un reto de datos?</h2>
-    <p>Cuéntenos su caso y le proponemos el camino.</p>
-    <a class="btn btn-light" href="/contacto">Hablar con nosotros →</a></div></section>
+<Base titleKey="serv.title" descKey="serv.head.lead" slug="servicios">
+  <Servicios />
 </Base>

@@ -1,20 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import QuantixFlow from '../components/pages/QuantixFlow.astro';
 ---
-<Base
-  title="Quantix Flow · Quantix Analitic"
-  description="Quantix Flow — plataforma de cartera y cobranzas B2B: visibilidad y control del recaudo de cuentas por cobrar entre empresas."
->
-  <section class="phead"><div class="wrap">
-    <div class="eyebrow2">Producto · B2B</div>
-    <h1>Quantix Flow — Cartera y cobranzas B2B</h1>
-    <p class="lead">Plataforma para dar visibilidad y control al recaudo de cuentas por cobrar entre empresas: priorice, haga seguimiento y acelere su flujo de caja.</p>
-  </div></section>
-  <section class="sec"><div class="wrap"><div class="grid3">
-    <div class="card"><div class="ic" style="background:var(--teal)">▤</div><h3>Visibilidad de cartera</h3><p>Estado de cuentas por cobrar y saldos por cliente, en tiempo real.</p></div>
-    <div class="card"><div class="ic" style="background:var(--teal)">↻</div><h3>Seguimiento y recaudo</h3><p>Priorización y acompañamiento del proceso de cobranza.</p></div>
-    <div class="card"><div class="ic" style="background:var(--teal)">≈</div><h3>Flujo de caja</h3><p>Mejor previsibilidad del recaudo para decidir con anticipación.</p></div>
-  </div></div></section>
-  <section class="ctaband"><div class="wrap"><h2>¿Le interesa Quantix Flow?</h2>
-    <p>Agende una demostración.</p><a class="btn btn-light" href="/contacto">Solicitar demo →</a></div></section>
+<Base titleKey="flow.title" descKey="flow.head.lead" slug="quantix-flow">
+  <QuantixFlow />
 </Base>

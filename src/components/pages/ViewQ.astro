@@ -1,0 +1,38 @@
+---
+import { t, getLangFromUrl } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const VIEWQ_APP = 'https://viewq.quantixanalitic.com';
+---
+<section class="phead"><div class="wrap">
+  <div class="eyebrow2">{t('viewq.head.eyebrow', lang)}</div>
+  <h1>{t('viewq.head.title', lang)}</h1>
+  <p class="lead">{t('viewq.head.lead', lang)}</p>
+</div></section>
+<section class="vqband"><div class="wrap vq-grid">
+  <div>
+    <div class="eyebrow2" style="color:#8fd3a8">{t('viewq.band.eyebrow', lang)}</div>
+    <h2>{t('viewq.band.title', lang)}</h2>
+    <ul class="vqlist">
+      <li><i>›</i> <b>{t('viewq.band.li1_b', lang)}</b> {t('viewq.band.li1', lang)}</li>
+      <li><i>›</i> <b>{t('viewq.band.li2_b', lang)}</b> {t('viewq.band.li2', lang)}</li>
+      <li><i>›</i> <b>{t('viewq.band.li3_b', lang)}</b> {t('viewq.band.li3', lang)}</li>
+    </ul>
+    <a class="btn btn-light" href={VIEWQ_APP}>{t('viewq.band.cta', lang)}</a>
+  </div>
+  <div><img src="/assets/viewq-dashboard.png" alt="viewQ dashboard" /></div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="feat-grid">
+    <div class="feat"><b>{t('viewq.f1.t', lang)}</b><p>{t('viewq.f1.d', lang)}</p></div>
+    <div class="feat"><b>{t('viewq.f2.t', lang)}</b><p>{t('viewq.f2.d', lang)}</p></div>
+    <div class="feat"><b>{t('viewq.f3.t', lang)}</b><p>{t('viewq.f3.d', lang)}</p></div>
+    <div class="feat"><b>{t('viewq.f4.t', lang)}</b><p>{t('viewq.f4.d', lang)}</p></div>
+    <div class="feat"><b>{t('viewq.f5.t', lang)}</b><p>{t('viewq.f5.d', lang)}</p></div>
+    <div class="feat"><b>{t('viewq.f6.t', lang)}</b><p>{t('viewq.f6.d', lang)}</p></div>
+  </div>
+</div></section>
+<section class="ctaband"><div class="wrap">
+  <h2>{t('viewq.cta.title', lang)}</h2>
+  <p>{t('viewq.cta.sub', lang)}</p>
+  <a class="btn btn-light" href={VIEWQ_APP}>{t('viewq.cta.btn', lang)}</a>
+</div></section>
