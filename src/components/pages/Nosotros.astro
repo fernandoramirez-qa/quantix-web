@@ -32,10 +32,10 @@ const lang = getLangFromUrl(Astro.url);
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
   <h3 style="color:var(--navy);font-size:21px;margin:0 0 16px">{t('work.title', lang)}</h3>
-  <div class="feat-grid">
-    <div class="feat"><b>{t('work.p1.t', lang)}</b><p>{t('work.p1.d', lang)}</p></div>
-    <div class="feat"><b>{t('work.p2.t', lang)}</b><p>{t('work.p2.d', lang)}</p></div>
-    <div class="feat"><b>{t('work.p3.t', lang)}</b><p>{t('work.p3.d', lang)}</p></div>
+  <div class="work-grid">
+    <div class="work-item"><div class="hex">◎</div><h4>{t('work.p1.t', lang)}</h4><p>{t('work.p1.d', lang)}</p></div>
+    <div class="work-item"><div class="hex">✦</div><h4>{t('work.p2.t', lang)}</h4><p>{t('work.p2.d', lang)}</p></div>
+    <div class="work-item"><div class="hex">↗</div><h4>{t('work.p3.t', lang)}</h4><p>{t('work.p3.d', lang)}</p></div>
   </div>
-  <p style="margin:22px 0 0;color:var(--mute);font-size:14px">{t('about.founder.line', lang)}</p>
+  <p style="margin:24px 0 0;color:var(--mute);font-size:15px;max-width:760px">{t('about.team.intro', lang)}</p>
 </div></section>

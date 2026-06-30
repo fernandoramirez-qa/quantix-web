@@ -27,5 +27,5 @@ const lang = getLangFromUrl(Astro.url);
     <p>{t('cli.compliance.d', lang)}</p>
   </div>
 </div></section>
-<section class="ctaband" style="background:#1C6FB5"><div class="wrap"><h2>{t('cli.cta.title', lang)}</h2>
-  <p>{t('cli.cta.sub', lang)}</p><a class="btn btn-light" href={localizedPath('contacto', lang)} style="color:#12517f">{t('common.cta.requestDemo', lang)}</a></div></section>
+<section class="ctaband"><div class="wrap"><h2>{t('cli.cta.title', lang)}</h2>
+  <p>{t('cli.cta.sub', lang)}</p><a class="btn btn-light" href={localizedPath('contacto', lang)}>{t('common.cta.requestDemo', lang)}</a></div></section>
