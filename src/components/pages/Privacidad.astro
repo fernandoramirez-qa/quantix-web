@@ -1,0 +1,194 @@
+---
+import { getLangFromUrl } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+// Fecha de entrada en vigor de esta versión. Se actualiza en cada cambio de la política.
+const vigente = { es: '16 de octubre de 2026', en: 'October 16, 2026' };
+---
+{lang === 'es' ? (
+  <>
+    <section class="phead"><div class="wrap">
+      <div class="eyebrow2">Política de privacidad</div>
+      <h1>Política de tratamiento de datos personales de viewQ</h1>
+      <p class="lead">Cómo Quantix Analitic S.A.S. recoge, usa y protege los datos de quienes usan viewQ, en su aplicación móvil y en su plataforma web. Vigente desde el {vigente.es}.</p>
+    </div></section>
+
+    <section class="sec legal"><div class="wrap">
+      <h2>1. Responsable del tratamiento</h2>
+      <p><strong>Quantix Analitic S.A.S.</strong>, NIT 902045108-2, con domicilio en la Cra. 10b #134a-35, Bogotá D.C., Colombia.</p>
+      <ul>
+        <li>Correo para asuntos de datos personales: <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a></li>
+        <li>Teléfono y WhatsApp: +57 316 474 9204</li>
+      </ul>
+      <p>Esta política se rige por la Ley 1581 de 2012, el Decreto 1377 de 2013 (compilado en el Decreto 1074 de 2015) y demás normas colombianas sobre protección de datos personales.</p>
+
+      <h2>2. A quién aplica</h2>
+      <p>viewQ es un software para empresas agrícolas. Cada empresa cliente crea las cuentas de sus colaboradores y decide qué información registra en la plataforma.</p>
+      <ul>
+        <li>Para los datos de la operación del cliente (sus fincas, lotes, monitoreos, fotos y registros de campo), la empresa cliente es la responsable del tratamiento y Quantix Analitic actúa como <strong>encargada</strong>: trata esos datos solo para prestarle el servicio y según sus instrucciones.</li>
+        <li>Para los datos necesarios para operar y dar soporte a la cuenta de cada usuario, Quantix Analitic es responsable.</li>
+      </ul>
+
+      <h2>3. Qué datos recogemos</h2>
+      <ul>
+        <li><strong>Datos de la cuenta:</strong> nombre, correo electrónico, empresa a la que pertenece y rol dentro de ella.</li>
+        <li><strong>Ubicación precisa:</strong> la aplicación móvil registra la posición GPS de cada punto de monitoreo o muestreo que el usuario guarda. Se usa solo mientras la aplicación está abierta; viewQ no rastrea la ubicación en segundo plano.</li>
+        <li><strong>Fotos:</strong> las imágenes que el usuario toma o adjunta a un registro, por ejemplo la foto de un hallazgo.</li>
+        <li><strong>Lectura de códigos:</strong> la cámara se usa para leer códigos de barras cuando el usuario lo pide. Solo se guarda el código leído.</li>
+        <li><strong>Registros de campo:</strong> la información que el usuario captura en la aplicación, como hallazgos de plagas, conteos, mediciones y su fecha y hora.</li>
+        <li><strong>Datos técnicos mínimos:</strong> la versión de la aplicación y los datos de la sesión necesarios para mantenerla abierta y sincronizar la información.</li>
+      </ul>
+      <p>viewQ no recoge datos para publicidad, no rastrea a los usuarios entre aplicaciones o sitios de terceros y no vende datos personales.</p>
+
+      <h2>4. Para qué los usamos</h2>
+      <ul>
+        <li>Permitir el inicio de sesión y el acceso a la información de la empresa a la que pertenece el usuario.</li>
+        <li>Guardar, sincronizar y mostrar los registros de campo, también cuando se capturan sin conexión.</li>
+        <li>Ubicar cada registro en el lote correspondiente y generar los indicadores, alertas e informes que la empresa cliente consulta.</li>
+        <li>Dar soporte técnico, mantener la seguridad del servicio y corregir errores.</li>
+        <li>Cumplir obligaciones legales.</li>
+      </ul>
+
+      <h2>5. Autorización y permisos del teléfono</h2>
+      <p>Al usar viewQ, el usuario autoriza el tratamiento descrito en esta política. Los permisos de ubicación y cámara los solicita el sistema operativo del teléfono, y el usuario puede concederlos, negarlos o retirarlos en cualquier momento desde la configuración del dispositivo. Si los niega, las funciones que dependen de ellos dejarán de estar disponibles.</p>
+
+      <h2>6. Con quién se comparten</h2>
+      <ul>
+        <li><strong>La empresa cliente:</strong> los registros que captura un usuario son visibles para las personas autorizadas de su empresa.</li>
+        <li><strong>Proveedor de infraestructura:</strong> los datos se alojan en servicios de nube de Microsoft Azure. Sus centros de datos pueden estar fuera de Colombia (por ejemplo, en Brasil), por lo que puede haber transferencia o transmisión internacional de datos, con las garantías de seguridad del proveedor.</li>
+        <li><strong>Autoridades:</strong> cuando la ley o una orden de autoridad competente lo exija.</li>
+      </ul>
+      <p>Los datos de una empresa cliente no se comparten con otras empresas cliente.</p>
+
+      <h2>7. Seguridad</h2>
+      <p>La información viaja cifrada (HTTPS) entre la aplicación y los servidores. El acceso está restringido por usuario y por empresa, y las credenciales de infraestructura se guardan en almacenes de secretos. Ningún sistema es infalible, pero aplicamos medidas técnicas y administrativas razonables para proteger los datos.</p>
+
+      <h2>8. Cuánto tiempo los conservamos</h2>
+      <p>Conservamos los datos mientras la empresa cliente tenga vigente su servicio con viewQ y durante el tiempo adicional que exijan la ley o la defensa de reclamaciones. Al terminar el servicio, la empresa cliente puede pedir la entrega o la eliminación de su información.</p>
+
+      <h2>9. Derechos del titular</h2>
+      <p>Como titular de datos personales, usted puede:</p>
+      <ul>
+        <li>conocer, actualizar y rectificar sus datos;</li>
+        <li>pedir prueba de la autorización otorgada;</li>
+        <li>ser informado sobre el uso que se ha dado a sus datos;</li>
+        <li>revocar la autorización o pedir la supresión de sus datos, cuando no exista un deber legal o contractual de conservarlos;</li>
+        <li>presentar quejas ante la Superintendencia de Industria y Comercio (SIC);</li>
+        <li>acceder gratuitamente a sus datos.</li>
+      </ul>
+
+      <h2>10. Cómo ejercer sus derechos y eliminar su cuenta</h2>
+      <p>Escriba a <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a> con su nombre, la empresa a la que pertenece y su solicitud. También puede pedirle al administrador de su empresa que desactive o elimine su cuenta.</p>
+      <ul>
+        <li>Las consultas se responden en un máximo de diez (10) días hábiles.</li>
+        <li>Los reclamos (corrección, actualización, supresión o revocación) se atienden en un máximo de quince (15) días hábiles.</li>
+      </ul>
+      <p>Si su solicitud se refiere a datos que la empresa cliente administra, se la trasladaremos para que la resuelva como responsable.</p>
+
+      <h2>11. Menores de edad</h2>
+      <p>viewQ es una herramienta de trabajo para empresas y no está dirigida a menores de edad.</p>
+
+      <h2>12. Cambios a esta política</h2>
+      <p>Si cambiamos esta política, publicaremos la nueva versión en esta página con su fecha de vigencia. Los cambios sustanciales se comunicarán a las empresas cliente.</p>
+      <p class="vigencia">Versión vigente desde el {vigente.es}.</p>
+    </div></section>
+  </>
+) : (
+  <>
+    <section class="phead"><div class="wrap">
+      <div class="eyebrow2">Privacy policy</div>
+      <h1>viewQ privacy policy</h1>
+      <p class="lead">How Quantix Analitic S.A.S. collects, uses and protects the data of people who use viewQ, in its mobile app and its web platform. Effective {vigente.en}.</p>
+    </div></section>
+
+    <section class="sec legal"><div class="wrap">
+      <h2>1. Data controller</h2>
+      <p><strong>Quantix Analitic S.A.S.</strong>, tax ID (NIT) 902045108-2, Cra. 10b #134a-35, Bogotá D.C., Colombia.</p>
+      <ul>
+        <li>Privacy contact: <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a></li>
+        <li>Phone and WhatsApp: +57 316 474 9204</li>
+      </ul>
+      <p>This policy is governed by Colombian data protection law, including Law 1581 of 2012 and Decree 1377 of 2013 (compiled in Decree 1074 of 2015). The Spanish version prevails in case of discrepancy.</p>
+
+      <h2>2. Who this applies to</h2>
+      <p>viewQ is software for agricultural companies. Each client company creates its staff accounts and decides what information it records on the platform.</p>
+      <ul>
+        <li>For the client's operational data (farms, plots, monitoring records, photos and field records), the client company is the controller and Quantix Analitic acts as a <strong>processor</strong>, handling that data only to provide the service and under the client's instructions.</li>
+        <li>For the data needed to operate and support each user's account, Quantix Analitic is the controller.</li>
+      </ul>
+
+      <h2>3. What we collect</h2>
+      <ul>
+        <li><strong>Account data:</strong> name, email address, the company the user belongs to and their role in it.</li>
+        <li><strong>Precise location:</strong> the mobile app records the GPS position of each monitoring or sampling point the user saves. It is used only while the app is open; viewQ does not track location in the background.</li>
+        <li><strong>Photos:</strong> images the user takes or attaches to a record, such as a photo of a finding.</li>
+        <li><strong>Code scanning:</strong> the camera is used to read barcodes when the user asks it to. Only the scanned code is stored.</li>
+        <li><strong>Field records:</strong> the information the user captures in the app, such as pest findings, counts, measurements and their date and time.</li>
+        <li><strong>Minimal technical data:</strong> the app version and the session data needed to keep the user signed in and to sync information.</li>
+      </ul>
+      <p>viewQ does not collect data for advertising, does not track users across third-party apps or websites, and does not sell personal data.</p>
+
+      <h2>4. How we use it</h2>
+      <ul>
+        <li>To let users sign in and access their company's information.</li>
+        <li>To store, sync and display field records, including those captured offline.</li>
+        <li>To place each record in its plot and produce the indicators, alerts and reports the client company uses.</li>
+        <li>To provide technical support, keep the service secure and fix errors.</li>
+        <li>To meet legal obligations.</li>
+      </ul>
+
+      <h2>5. Consent and device permissions</h2>
+      <p>By using viewQ, the user consents to the processing described in this policy. Location and camera permissions are requested by the phone's operating system, and the user can grant, deny or withdraw them at any time in the device settings. If they are denied, the features that depend on them will not be available.</p>
+
+      <h2>6. Who we share it with</h2>
+      <ul>
+        <li><strong>The client company:</strong> records captured by a user are visible to the authorized people in their company.</li>
+        <li><strong>Infrastructure provider:</strong> data is hosted on Microsoft Azure cloud services. Its data centers may be outside Colombia (for example, in Brazil), so data may be transferred or transmitted internationally, under the provider's security safeguards.</li>
+        <li><strong>Authorities:</strong> when required by law or by an order of a competent authority.</li>
+      </ul>
+      <p>A client company's data is never shared with other client companies.</p>
+
+      <h2>7. Security</h2>
+      <p>Data travels encrypted (HTTPS) between the app and our servers. Access is restricted by user and by company, and infrastructure credentials are kept in secret stores. No system is infallible, but we apply reasonable technical and administrative measures to protect the data.</p>
+
+      <h2>8. How long we keep it</h2>
+      <p>We keep the data while the client company's viewQ service is active and for any additional period required by law or for the defense of claims. When the service ends, the client company may request delivery or deletion of its information.</p>
+
+      <h2>9. Your rights</h2>
+      <p>As a data subject, you may:</p>
+      <ul>
+        <li>access, update and correct your data;</li>
+        <li>request proof of the consent you gave;</li>
+        <li>be informed of how your data has been used;</li>
+        <li>withdraw your consent or request deletion of your data, where there is no legal or contractual duty to keep it;</li>
+        <li>file complaints with the Superintendence of Industry and Commerce (SIC);</li>
+        <li>access your data free of charge.</li>
+      </ul>
+
+      <h2>10. Exercising your rights and deleting your account</h2>
+      <p>Write to <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a> with your name, your company and your request. You can also ask your company's administrator to deactivate or delete your account.</p>
+      <ul>
+        <li>Inquiries are answered within ten (10) business days.</li>
+        <li>Claims (correction, update, deletion or withdrawal) are handled within fifteen (15) business days.</li>
+      </ul>
+      <p>If your request concerns data managed by the client company, we will forward it to them to resolve as controller.</p>
+
+      <h2>11. Minors</h2>
+      <p>viewQ is a work tool for companies and is not directed at minors.</p>
+
+      <h2>12. Changes to this policy</h2>
+      <p>If we change this policy, we will publish the new version on this page with its effective date. Material changes will be communicated to client companies.</p>
+      <p class="vigencia">Version effective {vigente.en}.</p>
+    </div></section>
+  </>
+)}
+
+<style>
+  .legal .wrap > * { max-width: 820px; }
+  .legal h2 { font-size: 21px; color: var(--navy); margin: 34px 0 10px; }
+  .legal h2:first-child { margin-top: 0; }
+  .legal p, .legal li { font-size: 16px; line-height: 1.65; color: var(--ink, #1f2d3a); }
+  .legal ul { padding-left: 22px; margin: 0 0 12px; }
+  .legal li { margin-bottom: 6px; }
+  .legal a { color: var(--teal-d); }
+  .legal .vigencia { margin-top: 30px; font-size: 14px; color: var(--mute); }
+</style>

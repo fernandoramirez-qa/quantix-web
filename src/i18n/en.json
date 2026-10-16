@@ -245,5 +245,8 @@
   "seo.contact.title": "Contact — Quantix Analitic | viewQ and tailored solutions",
   "seo.contact.desc": "Let's talk about your operation. Get in touch to explore viewQ or a tailored solution. Bogotá, Colombia · info@quantixanalitic.com.",
   "contact.form.required": "Please complete name, email and message.",
-  "contact.form.neterr": "Couldn't connect. Check your connection and try again."
+  "contact.form.neterr": "Couldn't connect. Check your connection and try again.",
+  "seo.privacy.title": "viewQ privacy policy · Quantix Analitic",
+  "seo.privacy.desc": "How Quantix Analitic S.A.S. handles the personal data of viewQ users: what the app collects, why, who it is shared with and how to exercise your rights.",
+  "footer.privacy": "Privacy policy"
 }
