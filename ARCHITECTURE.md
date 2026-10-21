@@ -36,6 +36,7 @@ quantix-web/
         ├── quantix-flow.astro
         ├── qjuridico.astro
         ├── qlinic.astro
+        ├── qlanza.astro            # QLanza (frente #1); botón «Ingresar» → qlanza.quantixanalitic.com
         ├── nosotros.astro
         ├── contacto.astro
         └── 404.astro               # se construye a /404.html
@@ -52,7 +53,7 @@ quantix-web/
 
 ## Enlaces y datos de marca (invariantes)
 
-- **Rutas internas limpias**: `/viewq`, `/servicios`, `/quantix-flow`, `/qjuridico`, `/qlinic`,
+- **Rutas internas limpias**: `/viewq`, `/servicios`, `/quantix-flow`, `/qjuridico`, `/qlinic`, `/qlanza`,
   `/nosotros`, `/contacto`. Inicio es `/`.
 - Botón "Ver la plataforma completa" (página viewQ) → `https://viewq.quantixanalitic.com`.
 - Página viewQ lleva `<link rel="canonical" href="https://viewq.quantixanalitic.com">` para no
