@@ -1,0 +1,28 @@
+---
+import { t, getLangFromUrl, localizedPath } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const modulos = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6'];
+const iconos = ['▦', '▤', '◆', '⚗', '◉', '↗'];
+---
+<section class="phead"><div class="wrap">
+  <div class="eyebrow2">{t('lanza.head.eyebrow', lang)}</div>
+  <h1>{t('lanza.head.title', lang)}</h1>
+  <p class="lead">{t('lanza.head.lead', lang)}</p>
+  <p class="lead"><b>{t('lanza.nocrm.t', lang)}</b> {t('lanza.nocrm.d', lang)}</p>
+</div></section>
+<section class="sec"><div class="wrap">
+  <h2 style="color:var(--navy);margin:0 0 6px">{t('lanza.mod.title', lang)}</h2>
+  <p style="color:var(--mute);margin:0 0 24px;max-width:720px">{t('lanza.mod.sub', lang)}</p>
+  <div class="grid3">
+    {modulos.map((m, i) => (
+      <div class="card"><div class="ic" style="background:#2346D9">{iconos[i]}</div><h3>{t(`lanza.${m}.t`, lang)}</h3><p>{t(`lanza.${m}.d`, lang)}</p></div>
+    ))}
+  </div>
+  <div class="card" style="margin-top:18px"><div class="ic" style="background:#2346D9">⇄</div><h3>{t('lanza.sync.t', lang)}</h3><p>{t('lanza.sync.d', lang)}</p></div>
+</div></section>
+<section class="ctaband"><div class="wrap"><h2>{t('lanza.cta.title', lang)}</h2>
+  <p>{t('lanza.cta.sub', lang)}</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-light" href={localizedPath('contacto', lang)}>{t('common.cta.requestDemo', lang)}</a>
+    <a class="btn btn-ghost" style="background:#fff;color:var(--navy)" href="https://qlanza.quantixanalitic.com">{t('lanza.cta.login', lang)}</a>
+  </div></div></section>

@@ -3,7 +3,7 @@ import '../styles/global.css';
 import { t, getLangFromUrl, localizedPath, languages, defaultLang } from '../i18n/ui';
 
 interface Props {
-  seoKey?: string;          // 'home','viewq','serv','flow','jur','cli','about','contact' → seo.<seoKey>.title/desc
+  seoKey?: string;          // 'home','viewq','serv','flow','jur','cli','lanza','about','contact' → seo.<seoKey>.title/desc
   titleText?: string;       // título literal (p. ej. el 404 bilingüe, sin clave)
   slug?: string;            // '' = home; 'viewq', 'servicios', ...
   canonicalOverride?: string;
@@ -162,6 +162,7 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
           <h5>{t('footer.h.products', lang)}</h5>
           <a href={localizedPath('viewq', lang)}>viewQ</a><a href={localizedPath('quantix-flow', lang)}>Quantix Flow</a>
           <a href={localizedPath('qjuridico', lang)}>QJurídico</a><a href={localizedPath('qlinic', lang)}>Qlinic</a>
+          <a href={localizedPath('qlanza', lang)}>QLanza</a>
           <a href={localizedPath('servicios', lang)}>{t('nav.services', lang)}</a>
         </div>
         <div>

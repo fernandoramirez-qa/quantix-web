@@ -67,6 +67,13 @@ const lang = getLangFromUrl(Astro.url);
       <p>{t('home.prod.jur.desc', lang)}</p>
       <a class="more" href={localizedPath('qjuridico', lang)}>{t('common.cta.knowMore', lang)}</a>
     </div>
+    <div class="card lanzac">
+      <div class="pico lanza">L</div>
+      <div class="ktag" style="color:#1A35A8">{t('home.prod.lanza.tag', lang)}</div>
+      <h3>QLanza</h3>
+      <p>{t('home.prod.lanza.desc', lang)}</p>
+      <a class="more" href={localizedPath('qlanza', lang)}>{t('common.cta.knowMore', lang)}</a>
+    </div>
     <div class="card clic">
       <div class="pico cli">✚</div>
       <div class="ktag" style="color:#12517f">{t('home.prod.cli.tag', lang)}</div>
@@ -152,9 +159,11 @@ const lang = getLangFromUrl(Astro.url);
   .prodfeat .ktag{font-size:11.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--emerald)}
   .prodfeat p{color:var(--mute);font-size:14.5px;margin:0;max-width:640px}
   .prodfeat .pf-cta{color:var(--forest);font-weight:800;font-size:15px;white-space:nowrap}
-  .prod-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .prod-grid3{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:1080px){.prod-grid3{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:860px){.prodfeat{flex-direction:column;align-items:flex-start}.prod-grid3{grid-template-columns:1fr}}
   .card.clic .pico.cli{background:#1C6FB5}
+  .card.lanzac .pico.lanza{background:#2346D9}
   .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;transition:.18s}
   .card:hover{box-shadow:0 16px 34px rgba(22,38,63,.10);transform:translateY(-3px)}
   .card.feat{background:linear-gradient(180deg,#f4faf6,#fff);border-color:#cfe3d6}
