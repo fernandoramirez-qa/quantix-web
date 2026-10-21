@@ -248,6 +248,8 @@
   "contact.form.neterr": "No se pudo conectar. Revise su conexión e intente de nuevo.",
   "seo.privacy.title": "Política de privacidad de viewQ · Quantix Analitic",
   "seo.privacy.desc": "Cómo Quantix Analitic S.A.S. trata los datos personales de quienes usan viewQ: qué recoge la app, para qué, con quién se comparte y cómo ejercer sus derechos.",
+  "seo.privacyCalendar.title": "Política de privacidad de la conexión de calendarios · Quantix Analitic",
+  "seo.privacyCalendar.desc": "Quantix Analitic S.A.S. ofrece a los usuarios de sus plataformas (QLanza, viewQ y las demás) la opción de conectar su calendario de Google o de Microsoft Outlook. La conexión la decide cada usuario y la puede quitar cuando quiera.",
   "footer.privacy": "Política de privacidad",
   "home.prod.lanza.tag": "Comercial · Agroquímicos",
   "home.prod.lanza.desc": "El día a día del equipo comercial de una casa de agroquímicos: tareas, clientes, ensayos y lanzamientos de nuevas moléculas, en un solo tablero.",
