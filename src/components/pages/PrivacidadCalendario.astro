@@ -1,0 +1,77 @@
+---
+import { getLangFromUrl, localizedPath } from '../../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+// Fecha de entrada en vigor de esta versión. Se actualiza en cada cambio de la política.
+const vigente = { es: '21 de octubre de 2026', en: 'October 21, 2026' };
+const general = localizedPath('privacidad', lang);
+---
+{lang === 'es' ? (
+  <>
+    <section class="phead"><div class="wrap">
+      <div class="eyebrow2">Política de privacidad</div>
+      <h1>Política de privacidad de la conexión de calendarios</h1>
+    </div></section>
+
+    <section class="sec legal"><div class="wrap">
+      <p>Quantix Analitic S.A.S. (NIT 902045108-2, Cra. 10b #134a-35, Bogotá) ofrece a los usuarios de sus plataformas (QLanza, viewQ y las demás) la opción de conectar su calendario de Google o de Microsoft Outlook. La conexión la decide cada usuario y la puede quitar cuando quiera.</p>
+
+      <p><strong>Qué datos usamos.</strong> Al conectar el calendario, el usuario nos autoriza a:</p>
+      <ul>
+        <li>conocer el correo de la cuenta conectada, para mostrarle cuál cuenta tiene vinculada;</li>
+        <li>crear, cambiar y borrar en su calendario los eventos que corresponden a sus actividades y tareas en la plataforma.</li>
+      </ul>
+      <p>No leemos los demás eventos del calendario, ni su contenido, ni sus invitados. No accedemos al correo, a los contactos ni a ningún otro dato de la cuenta.</p>
+
+      <p><strong>Cómo los guardamos.</strong> Guardamos el correo de la cuenta conectada, el acceso que entrega Google o Microsoft (cifrado) y el identificador de cada evento que creamos, para poder cambiarlo o borrarlo. Los datos se alojan en Microsoft Azure y viajan cifrados.</p>
+
+      <p><strong>Con quién los compartimos.</strong> Con nadie. No los vendemos, no los usamos para publicidad y no los usamos para entrenar modelos de inteligencia artificial.</p>
+
+      <p><strong>Uso limitado.</strong> El uso y la transferencia a cualquier otra aplicación de la información recibida de las API de Google cumplen la Política de Datos de Usuario de los Servicios de API de Google, incluidos sus requisitos de Uso Limitado.</p>
+
+      <p><strong>Cómo desconectar.</strong> Desde la plataforma, con «Desconectar». Al hacerlo borramos el acceso y el correo de la cuenta; los eventos ya creados quedan en su calendario. También puede retirar el permiso desde su cuenta de Google o de Microsoft.</p>
+
+      <p><strong>Sus derechos.</strong> Los de la Ley 1581 de 2012, que se ejercen escribiendo a <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a>, como dice nuestra <a href={general}>política general</a>.</p>
+
+      <p class="vigencia">Versión vigente desde el {vigente.es}.</p>
+    </div></section>
+  </>
+) : (
+  <>
+    <section class="phead"><div class="wrap">
+      <div class="eyebrow2">Privacy policy</div>
+      <h1>Calendar connection privacy policy</h1>
+    </div></section>
+
+    <section class="sec legal"><div class="wrap">
+      <p>Quantix Analitic S.A.S. (tax ID 902045108-2, Cra. 10b #134a-35, Bogotá, Colombia) lets users of its platforms (QLanza, viewQ and others) connect their Google or Microsoft Outlook calendar. Each user decides whether to connect, and can disconnect at any time.</p>
+
+      <p><strong>What data we use.</strong> By connecting their calendar, the user authorizes us to:</p>
+      <ul>
+        <li>know the email address of the connected account, to show them which account is linked;</li>
+        <li>create, update and delete, in their calendar, the events that correspond to their activities and tasks on the platform.</li>
+      </ul>
+      <p>We do not read any other calendar events, their content or their guests. We do not access email, contacts or any other account data.</p>
+
+      <p><strong>How we store it.</strong> We store the email address of the connected account, the access granted by Google or Microsoft (encrypted), and the identifier of each event we create, so we can update or delete it. Data is hosted on Microsoft Azure and travels encrypted.</p>
+
+      <p><strong>Who we share it with.</strong> No one. We do not sell it, use it for advertising, or use it to train artificial intelligence models.</p>
+
+      <p><strong>Limited use.</strong> Our use and transfer to any other app of information received from Google APIs complies with the Google API Services User Data Policy, including its Limited Use requirements.</p>
+
+      <p><strong>How to disconnect.</strong> On the platform, with "Disconnect". This deletes the access and the account email; events already created remain in the calendar. Users can also revoke access from their Google or Microsoft account.</p>
+
+      <p><strong>Your rights.</strong> Those granted by Colombian Law 1581 of 2012, exercised by writing to <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a>, as described in our <a href={general}>general privacy policy</a>. The Spanish version prevails in case of discrepancy.</p>
+
+      <p class="vigencia">Version effective {vigente.en}.</p>
+    </div></section>
+  </>
+)}
+
+<style>
+  .legal .wrap > * { max-width: 820px; }
+  .legal p, .legal li { font-size: 16px; line-height: 1.65; color: var(--ink, #1f2d3a); }
+  .legal ul { padding-left: 22px; margin: 0 0 12px; }
+  .legal li { margin-bottom: 6px; }
+  .legal a { color: var(--teal-d); }
+  .legal .vigencia { margin-top: 30px; font-size: 14px; color: var(--mute); }
+</style>

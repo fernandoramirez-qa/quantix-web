@@ -248,5 +248,7 @@
   "contact.form.neterr": "Couldn't connect. Check your connection and try again.",
   "seo.privacy.title": "viewQ privacy policy · Quantix Analitic",
   "seo.privacy.desc": "How Quantix Analitic S.A.S. handles the personal data of viewQ users: what the app collects, why, who it is shared with and how to exercise your rights.",
+  "seo.privacyCalendar.title": "Calendar connection privacy policy · Quantix Analitic",
+  "seo.privacyCalendar.desc": "Quantix Analitic S.A.S. lets users of its platforms (QLanza, viewQ and others) connect their Google or Microsoft Outlook calendar. Each user decides whether to connect, and can disconnect at any time.",
   "footer.privacy": "Privacy policy"
 }
