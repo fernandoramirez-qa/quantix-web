@@ -2,7 +2,7 @@
 import { getLangFromUrl } from '../../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 // Fecha de entrada en vigor de esta versión. Se actualiza en cada cambio de la política.
-const vigente = { es: '16 de octubre de 2026', en: 'October 16, 2026' };
+const vigente = { es: '22 de octubre de 2026', en: 'October 22, 2026' };
 ---
 {lang === 'es' ? (
   <>
@@ -36,6 +36,9 @@ const vigente = { es: '16 de octubre de 2026', en: 'October 16, 2026' };
         <li><strong>Lectura de códigos:</strong> la cámara se usa para leer códigos de barras cuando el usuario lo pide. Solo se guarda el código leído.</li>
         <li><strong>Registros de campo:</strong> la información que el usuario captura en la aplicación, como hallazgos de plagas, conteos, mediciones y su fecha y hora.</li>
         <li><strong>Datos técnicos mínimos:</strong> la versión de la aplicación y los datos de la sesión necesarios para mantenerla abierta y sincronizar la información.</li>
+        <li><strong>Asistente Qpasa:</strong> los mensajes que el usuario escribe o dicta a Qpasa y sus respuestas. Si el usuario usa la voz, el audio se transcribe a texto y se descarta: no se guarda el audio. El texto de la conversación se conserva como registro del servicio.</li>
+        <li><strong>Identificador de instalación:</strong> un código aleatorio que la app genera al instalarse, para evitar registros duplicados al sincronizar sin conexión. No es el número del teléfono ni un identificador del equipo.</li>
+        <li><strong>Datos de diagnóstico del lector de códigos:</strong> el componente de Google que lee los códigos de barras (ML Kit) envía a Google datos técnicos de funcionamiento (modelo del equipo, versión del sistema, tiempos de respuesta y errores). No incluye el contenido de los códigos ni datos personales del usuario.</li>
       </ul>
       <p>viewQ no recoge datos para publicidad, no rastrea a los usuarios entre aplicaciones o sitios de terceros y no vende datos personales.</p>
 
@@ -49,12 +52,14 @@ const vigente = { es: '16 de octubre de 2026', en: 'October 16, 2026' };
       </ul>
 
       <h2>5. Autorización y permisos del teléfono</h2>
-      <p>Al usar viewQ, el usuario autoriza el tratamiento descrito en esta política. Los permisos de ubicación y cámara los solicita el sistema operativo del teléfono, y el usuario puede concederlos, negarlos o retirarlos en cualquier momento desde la configuración del dispositivo. Si los niega, las funciones que dependen de ellos dejarán de estar disponibles.</p>
+      <p>Al usar viewQ, el usuario autoriza el tratamiento descrito en esta política. Los permisos de ubicación y cámara los solicita el sistema operativo del teléfono, y el usuario puede concederlos, negarlos o retirarlos en cualquier momento desde la configuración del dispositivo. Si los niega, las funciones que dependen de ellos dejarán de estar disponibles. El micrófono se usa solo mientras el usuario mantiene presionado el botón de voz de Qpasa; el audio no se guarda.</p>
 
       <h2>6. Con quién se comparten</h2>
       <ul>
         <li><strong>La empresa cliente:</strong> los registros que captura un usuario son visibles para las personas autorizadas de su empresa.</li>
         <li><strong>Proveedor de infraestructura:</strong> los datos se alojan en servicios de nube de Microsoft Azure. Sus centros de datos pueden estar fuera de Colombia (por ejemplo, en Brasil), por lo que puede haber transferencia o transmisión internacional de datos, con las garantías de seguridad del proveedor.</li>
+        <li><strong>Proveedores de inteligencia artificial,</strong> que actúan como encargados y tratan los datos solo para prestar el servicio: Microsoft Azure OpenAI, que transcribe la voz y convierte las respuestas en audio, y Anthropic, que procesa el texto de las conversaciones con Qpasa. Sus servidores están en Estados Unidos, por lo que hay transferencia internacional de datos.</li>
+        <li><strong>Google,</strong> que recibe los datos de diagnóstico del lector de códigos descritos en la sección 3.</li>
         <li><strong>Autoridades:</strong> cuando la ley o una orden de autoridad competente lo exija.</li>
       </ul>
       <p>Los datos de una empresa cliente no se comparten con otras empresas cliente.</p>
@@ -124,6 +129,9 @@ const vigente = { es: '16 de octubre de 2026', en: 'October 16, 2026' };
         <li><strong>Code scanning:</strong> the camera is used to read barcodes when the user asks it to. Only the scanned code is stored.</li>
         <li><strong>Field records:</strong> the information the user captures in the app, such as pest findings, counts, measurements and their date and time.</li>
         <li><strong>Minimal technical data:</strong> the app version and the session data needed to keep the user signed in and to sync information.</li>
+        <li><strong>Qpasa assistant:</strong> the messages the user types or dictates to Qpasa and its replies. If the user uses voice, the audio is transcribed to text and discarded: the audio is not stored. The text of the conversation is kept as a service record.</li>
+        <li><strong>Installation identifier:</strong> a random code the app generates when it is installed, used to avoid duplicate records when syncing offline. It is not the phone number or a device hardware identifier.</li>
+        <li><strong>Code scanner diagnostic data:</strong> the Google component that reads barcodes (ML Kit) sends Google technical operating data (device model, operating system version, response times and errors). It does not include the content of the codes or the user's personal data.</li>
       </ul>
       <p>viewQ does not collect data for advertising, does not track users across third-party apps or websites, and does not sell personal data.</p>
 
@@ -137,12 +145,14 @@ const vigente = { es: '16 de octubre de 2026', en: 'October 16, 2026' };
       </ul>
 
       <h2>5. Consent and device permissions</h2>
-      <p>By using viewQ, the user consents to the processing described in this policy. Location and camera permissions are requested by the phone's operating system, and the user can grant, deny or withdraw them at any time in the device settings. If they are denied, the features that depend on them will not be available.</p>
+      <p>By using viewQ, the user consents to the processing described in this policy. Location and camera permissions are requested by the phone's operating system, and the user can grant, deny or withdraw them at any time in the device settings. If they are denied, the features that depend on them will not be available. The microphone is used only while the user holds down the Qpasa voice button; the audio is not stored.</p>
 
       <h2>6. Who we share it with</h2>
       <ul>
         <li><strong>The client company:</strong> records captured by a user are visible to the authorized people in their company.</li>
         <li><strong>Infrastructure provider:</strong> data is hosted on Microsoft Azure cloud services. Its data centers may be outside Colombia (for example, in Brazil), so data may be transferred or transmitted internationally, under the provider's security safeguards.</li>
+        <li><strong>Artificial intelligence providers,</strong> acting as processors and handling the data only to provide the service: Microsoft Azure OpenAI, which transcribes voice and converts replies to audio, and Anthropic, which processes the text of conversations with Qpasa. Their servers are in the United States, so there is an international transfer of data.</li>
+        <li><strong>Google,</strong> which receives the code scanner diagnostic data described in section 3.</li>
         <li><strong>Authorities:</strong> when required by law or by an order of a competent authority.</li>
       </ul>
       <p>A client company's data is never shared with other client companies.</p>
