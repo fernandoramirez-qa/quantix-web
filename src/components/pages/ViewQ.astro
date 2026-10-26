@@ -1,38 +1,76 @@
 ---
-import { t, getLangFromUrl } from '../../i18n/ui';
+import { t, getLangFromUrl, localizedPath, splitTitle, kicker } from '../../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 const VIEWQ_APP = 'https://viewq.quantixanalitic.com';
+const [name, subtitle] = splitTitle(t('viewq.head.title', lang));
 ---
-<section class="phead"><div class="wrap">
-  <div class="eyebrow2">{t('viewq.head.eyebrow', lang)}</div>
-  <h1>{t('viewq.head.title', lang)}</h1>
-  <p class="lead">{t('viewq.head.lead', lang)}</p>
-</div></section>
-<section class="vqband"><div class="wrap vq-grid">
-  <div>
-    <div class="eyebrow2" style="color:#8fd3a8">{t('viewq.band.eyebrow', lang)}</div>
-    <h2>{t('viewq.band.title', lang)}</h2>
-    <ul class="vqlist">
-      <li><i>›</i> <b>{t('viewq.band.li1_b', lang)}</b> {t('viewq.band.li1', lang)}</li>
-      <li><i>›</i> <b>{t('viewq.band.li2_b', lang)}</b> {t('viewq.band.li2', lang)}</li>
-      <li><i>›</i> <b>{t('viewq.band.li3_b', lang)}</b> {t('viewq.band.li3', lang)}</li>
-    </ul>
-    <a class="btn btn-light" href={VIEWQ_APP}>{t('viewq.band.cta', lang)}</a>
+<section class="sec first" style="padding-top:88px"><div class="wrap split">
+  <div class="txt">
+    <p class="kicker">{kicker(t('viewq.head.eyebrow', lang))}</p>
+    <h1 class="h-product">{name}</h1>
+    <p class="subtitle">{subtitle}</p>
+    <p class="lead">{t('viewq.head.lead', lang)}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{t('cta.demo', lang)}</a>
+      <a class="btn btn-ghost" href={VIEWQ_APP}>{t('viewq.login', lang)}</a>
+    </div>
   </div>
-  <div><img src="/assets/viewq-dashboard.png" alt="viewQ dashboard" /></div>
+  <figure class="media">
+    <img class="shot" src="/assets/mirfe-consumo-riego.webp" alt={t('hx.hero.alt', lang)} width="1149" height="1220" fetchpriority="high" />
+  </figure>
 </div></section>
+
 <section class="sec"><div class="wrap">
-  <div class="feat-grid">
-    <div class="feat"><b>{t('viewq.f1.t', lang)}</b><p>{t('viewq.f1.d', lang)}</p></div>
-    <div class="feat"><b>{t('viewq.f2.t', lang)}</b><p>{t('viewq.f2.d', lang)}</p></div>
-    <div class="feat"><b>{t('viewq.f3.t', lang)}</b><p>{t('viewq.f3.d', lang)}</p></div>
-    <div class="feat"><b>{t('viewq.f4.t', lang)}</b><p>{t('viewq.f4.d', lang)}</p></div>
-    <div class="feat"><b>{t('viewq.f5.t', lang)}</b><p>{t('viewq.f5.d', lang)}</p></div>
-    <div class="feat"><b>{t('viewq.f6.t', lang)}</b><p>{t('viewq.f6.d', lang)}</p></div>
+  <p class="kicker">{t('viewq.band.eyebrow', lang)}</p>
+  <h2 class="h-md" style="margin-bottom:48px;max-width:760px">{t('viewq.band.title', lang)}</h2>
+  <div class="feats">
+    <div class="feat-item"><h3>{t('viewq.band.li1_b', lang).replace(/:$/, '')}</h3><p>{t('viewq.band.li1', lang)}</p></div>
+    <div class="feat-item"><h3>{t('viewq.band.li2_b', lang).replace(/:$/, '')}</h3><p>{t('viewq.band.li2', lang)}</p></div>
+    <div class="feat-item"><h3>{t('viewq.band.li3_b', lang).replace(/:$/, '')}</h3><p>{t('viewq.band.li3', lang)}</p></div>
   </div>
 </div></section>
+
+<section class="sec"><div class="wrap split rev">
+  <figure class="media phones two">
+    <img src="/assets/mipe-recorrido.webp" alt={t('hx.vq.alt1', lang)} width="700" height="1521" loading="lazy" />
+    <img class="low" src="/assets/mipe-incidencia.webp" alt={t('hx.vq.alt2', lang)} width="700" height="1521" loading="lazy" />
+  </figure>
+  <div class="txt">
+    <h2 class="h-md" style="margin-bottom:28px">{t('viewq.field.title', lang)}</h2>
+    <div class="rows">
+      <div class="row-item"><h3>{t('viewq.f1.t', lang)}</h3><p>{t('viewq.f1.d', lang)}</p></div>
+      <div class="row-item"><h3>{t('viewq.f5.t', lang)}</h3><p>{t('viewq.f5.d', lang)}</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="h-md" style="margin-bottom:48px">{t('viewq.office.title', lang)}</h2>
+  <div class="feats">
+    <div class="feat-item"><h3>{t('viewq.f2.t', lang)}</h3><p>{t('viewq.f2.d', lang)}</p></div>
+    <div class="feat-item"><h3>{t('viewq.f3.t', lang)}</h3><p>{t('viewq.f3.d', lang)}</p></div>
+    <div class="feat-item"><h3>{t('viewq.f4.t', lang)}</h3><p>{t('viewq.f4.d', lang)}</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="qpasa"><div class="wrap split">
+  <div class="txt">
+    <p class="kicker">{kicker(t('viewq.f6.t', lang))}</p>
+    <h2 class="h-md">{t('viewq.qpasa.title', lang)}</h2>
+    <p class="lead" style="margin:0">{t('viewq.qpasa.d', lang)}</p>
+  </div>
+  <figure class="media phones three">
+    <img src="/assets/qpasa-voz.webp" alt={t('hx.qp.alt1', lang)} width="591" height="1280" loading="lazy" />
+    <img class="low" src="/assets/qpasa-proyeccion-aguacate.webp" alt={t('hx.qp.alt2', lang)} width="591" height="1280" loading="lazy" />
+    <img src="/assets/qpasa-proyeccion-flores.webp" alt={t('hx.qp.alt3', lang)} width="591" height="1280" loading="lazy" />
+  </figure>
+</div></section>
+
 <section class="ctaband"><div class="wrap">
-  <h2>{t('viewq.cta.title', lang)}</h2>
+  <h2>{t('viewq.cta.title', lang)}.</h2>
   <p>{t('viewq.cta.sub', lang)}</p>
-  <a class="btn btn-light" href={VIEWQ_APP}>{t('viewq.cta.btn', lang)}</a>
+  <div class="btn-row">
+    <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{t('cta.demo', lang)}</a>
+    <a class="btn btn-ghost" href={VIEWQ_APP}>{t('viewq.login', lang)}</a>
+  </div>
 </div></section>

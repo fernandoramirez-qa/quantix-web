@@ -123,26 +123,24 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
     )}
   </head>
   <body>
-    <div class="ribbon">{t('ribbon.text', lang)}</div>
-
     <header class="nav"><div class="wrap nav-in">
-      <a href={homeHref} class="logo" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none">
-        <img src="/assets/quantix-isotype.png" alt="Quantix Analitic" width="34" height="34" style="height:34px;width:auto;display:block" />
-        <span>QUANTIX <b>ANALITIC</b></span>
+      <a href={homeHref} class="logo">
+        <img src="/assets/quantix-isotype.png" alt="" width="32" height="32" />
+        <span>Quantix Analitic</span>
       </a>
+      <nav class="links" aria-label={t('nav.label', lang)}>
+        <a href={`${homeHref}#productos`}>{t('nav.products', lang)}</a>
+        <a href={`${homeHref}#qpasa`}>Qpasa</a>
+        <a href={localizedPath('servicios', lang)}>{t('nav.services', lang)}</a>
+        <a href={localizedPath('nosotros', lang)}>{t('nav.about', lang)}</a>
+      </nav>
       <div class="nav-right">
-        <nav class="links">
-          <a href={localizedPath('viewq', lang)} class="vq">viewQ</a>
-          <a href={`${homeHref}#productos`}>{t('nav.products', lang)}</a>
-          <a href={localizedPath('servicios', lang)}>{t('nav.services', lang)}</a>
-          <a href={localizedPath('nosotros', lang)}>{t('nav.about', lang)}</a>
-          <a class="btn btn-primary" href={localizedPath('contacto', lang)} style="padding:9px 18px">{t('common.cta.talk', lang)}</a>
-        </nav>
         <div class="lang-switch" role="group" aria-label="Idioma / Language">
           <a href={enPath} data-setlang="en" class={lang === 'en' ? 'active' : ''} aria-current={lang === 'en' ? 'true' : undefined} hreflang="en">{languages.en}</a>
           <span class="sep" aria-hidden="true">|</span>
           <a href={esPath} data-setlang="es" class={lang === 'es' ? 'active' : ''} aria-current={lang === 'es' ? 'true' : undefined} hreflang="es">{languages.es}</a>
         </div>
+        <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{t('common.cta.talk', lang)}</a>
       </div>
     </div></header>
 
@@ -151,30 +149,31 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
     <footer><div class="wrap">
       <div class="foot-grid">
         <div>
-          <div class="logo" style="display:inline-flex;align-items:center;gap:8px">
-            <img src="/assets/quantix-isotype.png" alt="Quantix Analitic" width="30" height="30" style="height:30px;width:auto;display:block" />
-            <span>QUANTIX <b>ANALITIC</b></span>
-          </div>
-          <p style="color:#aebfcd;max-width:300px;margin:0 0 10px">{t('footer.tagline', lang)}</p>
-          <p style="color:#8ba0b4;font-size:13px;margin:0">{t('footer.address', lang)}</p>
+          <a href={homeHref} class="logo" style="margin-bottom:12px">
+            <img src="/assets/quantix-isotype.png" alt="" width="28" height="28" />
+            <span>Quantix Analitic</span>
+          </a>
+          <p style="margin:0 0 6px;max-width:320px">{t('footer.tagline', lang)}</p>
+          <p style="margin:0;font-size:14px;color:var(--mute2)">{t('footer.address', lang)}</p>
         </div>
-        <div>
+        <div class="col">
           <h5>{t('footer.h.products', lang)}</h5>
-          <a href={localizedPath('viewq', lang)}>viewQ</a><a href={localizedPath('quantix-flow', lang)}>Quantix Flow</a>
-          <a href={localizedPath('qjuridico', lang)}>QJurídico</a><a href={localizedPath('qlinic', lang)}>Qlinic</a>
+          <a href={localizedPath('viewq', lang)}>viewQ</a>
+          <a href={localizedPath('quantix-flow', lang)}>Quantix Flow</a>
+          <a href={localizedPath('qjuridico', lang)}>QJurídico</a>
           <a href={localizedPath('qlanza', lang)}>QLanza</a>
+          <a href={localizedPath('qlinic', lang)}>Qlinic</a>
           <a href={localizedPath('servicios', lang)}>{t('nav.services', lang)}</a>
         </div>
-        <div>
+        <div class="col">
           <h5>{t('footer.h.contact', lang)}</h5>
-          <a href="https://quantixanalitic.com">quantixanalitic.com</a>
           <a href="mailto:info@quantixanalitic.com">info@quantixanalitic.com</a>
           <a href="https://wa.me/573164749204">WhatsApp +57 316 474 9204</a>
         </div>
       </div>
       <div class="foot-bottom">
         <span>{t('footer.legal', lang)}</span>
-        <span><a href={localizedPath('privacidad', lang)} style="color:inherit">{t('footer.privacy', lang)}</a> · viewQ · Quantix Flow · QJurídico</span>
+        <a href={localizedPath('privacidad', lang)}>{t('footer.privacy', lang)}</a>
       </div>
     </div></footer>
 

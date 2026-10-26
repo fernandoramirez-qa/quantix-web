@@ -12,7 +12,8 @@ productos. No comparte código, build ni dominio de despliegue con esos repos.
 - **Astro** con **salida estática** (`output: 'static'`, sin adapter). El build genera `dist/`.
 - **Multipágina** (una ruta = un archivo en `src/pages/`). Sin framework de UI, sin SPA.
 - **Español únicamente** por ahora. Sin i18n.
-- Sin dependencias de runtime más allá de Astro. CSS plano en `src/styles/global.css`.
+- Sin dependencias de runtime más allá de Astro y la fuente autoalojada `@fontsource-variable/bricolage-grotesque`. CSS plano en `src/styles/global.css`.
+- **Diseño (2026-10-26)**: fondo blanco, una sola familia tipográfica (Bricolage Grotesque), azul noche `#0D1A2D` para texto y botones, turquesa `#1F7D77` solo como acento. Sin sombras, sin fondos de color por sección, sin tarjetas: las secciones se separan con una línea fina. Las imágenes son siempre capturas reales de producto.
 
 ## Estructura de carpetas
 
@@ -26,7 +27,7 @@ quantix-web/
 │   └── assets/                      # imágenes reales (viewq-dashboard.png, qpasa-phone.png, ...)
 └── src/
     ├── layouts/
-    │   └── Base.astro              # ribbon AgriFoodTech + <header> nav + <footer>. Recibe `title`.
+    │   └── Base.astro              # <header> nav + <footer>. Recibe `title`.
     ├── styles/
     │   └── global.css              # estilos compartidos (idénticos en todas las páginas)
     └── pages/
@@ -44,9 +45,9 @@ quantix-web/
 
 ## Convención de layout
 
-- **Un único layout compartido**: `src/layouts/Base.astro`. Contiene el **ribbon AgriFoodTech**,
+- **Un único layout compartido**: `src/layouts/Base.astro`. Contiene
   el `<header>` de navegación y el `<footer>`. Recibe `title` (y meta opcional) por props.
-- **Prohibido duplicar** ribbon / nav / footer dentro de las páginas. Cada página solo aporta su
+- **Prohibido duplicar** nav / footer dentro de las páginas. Cada página solo aporta su
   contenido propio dentro del `<slot />` del layout.
 - **Estilos compartidos** viven en `src/styles/global.css` (importados una sola vez desde `Base.astro`).
   No se repiten bloques `<style>` por página.
@@ -67,7 +68,9 @@ quantix-web/
 
 - Las imágenes van en `public/assets/` y se referencian con rutas absolutas, p. ej.
   `<img src="/assets/viewq-dashboard.png">`. No se embeben en base64.
-- Solo **Inicio** y la página **viewQ** usan imágenes (`viewq-dashboard.png`, `qpasa-phone.png`).
+- Solo **Inicio** y la página **viewQ** usan imágenes, todas capturas reales en WebP:
+  `mirfe-consumo-riego.webp` (consumo de riego), `mipe-recorrido.webp` y `mipe-incidencia.webp` (app de campo),
+  `qpasa-voz.webp`, `qpasa-proyeccion-aguacate.webp` y `qpasa-proyeccion-flores.webp` (Qpasa en la app móvil).
 
 ## Despliegue (regla de deploy)
 

@@ -1,16 +1,22 @@
 ---
-import { t, getLangFromUrl, localizedPath } from '../../i18n/ui';
+import { t, getLangFromUrl, localizedPath, splitTitle, kicker, plain } from '../../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
+const [name, subtitle] = splitTitle(t('jur.head.title', lang));
 ---
-<section class="phead"><div class="wrap">
-  <div class="eyebrow2">{t('jur.head.eyebrow', lang)}</div>
-  <h1>{t('jur.head.title', lang)}</h1>
+<section class="sec first" style="padding-top:96px"><div class="wrap">
+  <p class="kicker">{kicker(t('jur.head.eyebrow', lang))}</p>
+  <h1 class="h-product">{name}</h1>
+  <p class="subtitle">{subtitle}</p>
   <p class="lead">{t('jur.head.lead', lang)}</p>
+  <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{plain(t('common.cta.contactUs', lang))}</a>
 </div></section>
-<section class="sec"><div class="wrap"><div class="grid3">
-  <div class="card"><div class="ic" style="background:var(--navy2)">⌕</div><h3>{t('jur.c1.t', lang)}</h3><p>{t('jur.c1.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:var(--navy2)">▤</div><h3>{t('jur.c2.t', lang)}</h3><p>{t('jur.c2.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:var(--navy2)">⚖</div><h3>{t('jur.c3.t', lang)}</h3><p>{t('jur.c3.d', lang)}</p></div>
-</div></div></section>
-<section class="ctaband"><div class="wrap"><h2>{t('jur.cta.title', lang)}</h2>
-  <p>{t('jur.cta.sub', lang)}</p><a class="btn btn-light" href={localizedPath('contacto', lang)}>{t('common.cta.contactUs', lang)} →</a></div></section>
+<section class="sec"><div class="wrap feats">
+  <div class="feat-item"><h3>{t('jur.c1.t', lang)}</h3><p>{t('jur.c1.d', lang)}</p></div>
+  <div class="feat-item"><h3>{t('jur.c2.t', lang)}</h3><p>{t('jur.c2.d', lang)}</p></div>
+  <div class="feat-item"><h3>{t('jur.c3.t', lang)}</h3><p>{t('jur.c3.d', lang)}</p></div>
+</div></section>
+<section class="ctaband"><div class="wrap">
+  <h2>{t('jur.cta.title', lang)}</h2>
+  <p>{t('jur.cta.sub', lang)}</p>
+  <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{plain(t('common.cta.contactUs', lang))}</a>
+</div></section>

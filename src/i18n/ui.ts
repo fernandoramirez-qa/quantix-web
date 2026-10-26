@@ -31,3 +31,17 @@ export function localizedPath(slug: string, lang: Lang): string {
   if (lang === defaultLang) return clean ? `/${clean}` : '/';
   return clean ? `/${lang}/${clean}` : `/${lang}/`;
 }
+
+/** Texto de botón sin la flecha final ("Conocer →" → "Conocer"). */
+export function plain(s: string): string {
+  return s.replace(/\s*→\s*$/, '');
+}
+
+/** "viewQ — Plataforma…" → ["viewQ", "Plataforma…"]; "Producto · B2B" → "Producto, B2B". */
+export function splitTitle(s: string): [string, string] {
+  const [a, ...rest] = s.split(' — ');
+  return [a, rest.join(' — ')];
+}
+export function kicker(s: string): string {
+  return s.replace(/\s·\s/g, ', ');
+}

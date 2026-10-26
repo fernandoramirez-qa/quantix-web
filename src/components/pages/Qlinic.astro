@@ -1,31 +1,27 @@
 ---
-import { t, getLangFromUrl, localizedPath } from '../../i18n/ui';
+import { t, getLangFromUrl, localizedPath, splitTitle, kicker } from '../../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
+const items = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'];
+const [name, subtitle] = splitTitle(t('cli.head.title', lang));
 ---
-<section class="phead" style="background:linear-gradient(180deg,#EAF3FC,#fff)"><div class="wrap">
-  <div class="eyebrow2" style="color:#12517f">{t('cli.head.eyebrow', lang)}</div>
-  <h1>{t('cli.head.title', lang)}</h1>
-  <p class="lead">{t('cli.head.lead', lang)}</p>
+<section class="sec first" style="padding-top:96px"><div class="wrap">
+  <p class="kicker">{kicker(t('cli.head.eyebrow', lang))}</p>
+  <h1 class="h-product">{name}</h1>
+  <p class="subtitle">{subtitle}</p>
+  <p class="lead" style="max-width:660px">{t('cli.head.lead', lang)}</p>
+  <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{t('cta.demo', lang)}</a>
 </div></section>
-<section class="sec"><div class="wrap"><div class="grid3">
-  <div class="card"><div class="ic" style="background:#1C6FB5">✚</div><h3>{t('cli.c1.t', lang)}</h3>
-    <p>{t('cli.c1.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:#1C6FB5">🗓</div><h3>{t('cli.c2.t', lang)}</h3>
-    <p>{t('cli.c2.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:#1C6FB5">⚕</div><h3>{t('cli.c3.t', lang)}</h3>
-    <p>{t('cli.c3.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:#1C6FB5">⇄</div><h3>{t('cli.c4.t', lang)}</h3>
-    <p>{t('cli.c4.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:#1C6FB5">▤</div><h3>{t('cli.c5.t', lang)}</h3>
-    <p>{t('cli.c5.d', lang)}</p></div>
-  <div class="card"><div class="ic" style="background:#1C6FB5">◎</div><h3>{t('cli.c6.t', lang)}</h3>
-    <p>{t('cli.c6.d', lang)}</p></div>
-</div></div></section>
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="feat" style="background:#EAF3FC;border-color:#cfe0f3">
-    <b style="color:#12517f">{t('cli.compliance.b', lang)}</b>
-    <p>{t('cli.compliance.d', lang)}</p>
-  </div>
+<section class="sec"><div class="wrap feats">
+  {items.map((c) => (
+    <div class="feat-item"><h3>{t(`cli.${c}.t`, lang)}</h3><p>{t(`cli.${c}.d`, lang)}</p></div>
+  ))}
 </div></section>
-<section class="ctaband"><div class="wrap"><h2>{t('cli.cta.title', lang)}</h2>
-  <p>{t('cli.cta.sub', lang)}</p><a class="btn btn-light" href={localizedPath('contacto', lang)}>{t('common.cta.requestDemo', lang)}</a></div></section>
+<section class="sec"><div class="wrap note">
+  <h2>{t('cli.compliance.b', lang)}</h2>
+  <p>{t('cli.compliance.d', lang)}</p>
+</div></section>
+<section class="ctaband"><div class="wrap">
+  <h2>{t('cli.cta.title', lang)}</h2>
+  <p>{t('cli.cta.sub', lang)}</p>
+  <a class="btn btn-primary" href={localizedPath('contacto', lang)}>{t('cta.demo', lang)}</a>
+</div></section>
