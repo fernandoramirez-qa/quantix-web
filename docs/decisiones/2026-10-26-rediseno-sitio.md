@@ -42,4 +42,4 @@ NUNCA EXISTIÓ (diseño nuevo). No hay cambios de modelo de datos.
 
 ## SHA del merge a main
 
-Se completa al publicar.
+`69b046e` (develop y main, fast-forward, 2026-10-26).
