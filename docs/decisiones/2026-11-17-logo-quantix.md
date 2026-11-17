@@ -25,8 +25,8 @@ Un logo propio para Quantix Analitic, la marca madre de QPulso y Qpasa. Hasta ah
 
 **Ruta en pantalla:** todas las páginas de quantixanalitic.com. El logo está arriba a la izquierda del encabezado y en el pie, y el favicon en la pestaña del navegador.
 
-**No se cambió:** `public/og-image.png`, la imagen que aparece al compartir un enlace, todavía con la marca anterior. Queda pendiente.
+**Segundo cambio (PR aparte, el mismo día):** `public/og-image.png`, la imagen que aparece al compartir un enlace del sitio (WhatsApp, LinkedIn, Facebook), queda con el logo nuevo: fondo azul noche, «Datos e IA para decidir mejor.», QPulso y Qpasa (1200×630). Es la misma pieza que la portada de Facebook.
 
 ## SHA del merge a main
 
-(se completa después del merge)
+`837bc93` (PR #2, logo y favicon). La imagen para compartir va en el PR siguiente.
