@@ -97,6 +97,7 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -125,7 +126,7 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
   <body>
     <header class="nav"><div class="wrap nav-in">
       <a href={homeHref} class="logo">
-        <img src="/assets/quantix-isotype.png" alt="" width="32" height="32" />
+        <img src="/assets/quantix-simbolo.svg" alt="" width="32" height="32" />
         <span>Quantix Analitic</span>
       </a>
       <nav class="links" aria-label={t('nav.label', lang)}>
@@ -150,7 +151,7 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
       <div class="foot-grid">
         <div>
           <a href={homeHref} class="logo" style="margin-bottom:12px">
-            <img src="/assets/quantix-isotype.png" alt="" width="28" height="28" />
+            <img src="/assets/quantix-simbolo.svg" alt="" width="28" height="28" />
             <span>Quantix Analitic</span>
           </a>
           <p style="margin:0 0 6px;max-width:320px">{t('footer.tagline', lang)}</p>
