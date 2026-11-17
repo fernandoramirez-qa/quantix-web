@@ -40,7 +40,7 @@ const orgSchema = {
   url: 'https://www.quantixanalitic.com',
   logo: 'https://www.quantixanalitic.com/favicon-512x512.png',
   description:
-    'Software AgriFoodTech y soluciones de datos e IA para el sector agroalimentario y empresarial.',
+    'Plataformas de datos e inteligencia artificial: QPulso (inteligencia de mercado y competencia), Qpasa (asistente de IA), Quantix Flow, QJurídico, QLanza y Qlinic.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Cra. 10b #134a-35',
@@ -159,7 +159,7 @@ const schemas = seoKey === 'viewq' ? [orgSchema, softwareSchema] : [orgSchema];
         </div>
         <div class="col">
           <h5>{t('footer.h.products', lang)}</h5>
-          <a href={localizedPath('viewq', lang)}>viewQ</a>
+          <a href={`${homeHref}#qpulso`}>QPulso</a>
           <a href={localizedPath('quantix-flow', lang)}>Quantix Flow</a>
           <a href={localizedPath('qjuridico', lang)}>QJurídico</a>
           <a href={localizedPath('qlanza', lang)}>QLanza</a>
