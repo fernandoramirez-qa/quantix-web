@@ -152,3 +152,41 @@ footer h5{color:var(--ink);font-size:15px;font-weight:700;margin:0 0 12px}
 footer .col a{display:block;margin-bottom:9px;color:var(--mute)} footer .col a:hover{color:var(--ink)}
 .foot-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;color:var(--mute2)}
 .foot-bottom a:hover{color:var(--ink)}
+
+/* Inicio: QPulso y Qpasa (2026-11-17, sin viewQ) */
+.pulso{background:var(--ink);color:#fff;border-radius:22px;padding:26px 26px 22px}
+.pulso-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.pulso-title{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.pulso-badge,.pulso-sub{font-size:13px;color:#b8c4d1}
+.pulso-sub{margin:0 0 14px;font-size:14px}
+.pulso-line{filter:drop-shadow(0 0 10px #2fd1c5)}
+.pulso-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pulso-chips span{padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:13px;color:#dfe7ef}
+.pulso-qpasa{margin:16px 0 0;padding:14px 16px;background:#fff;border-radius:16px;font-size:15px;line-height:1.45;color:var(--ink2)}
+.pulso-qpasa b{color:var(--teal)}
+.qcards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.qcards>div{border:1px solid var(--frame);border-radius:18px;padding:20px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.qcards span{font-size:14px;color:var(--mute2)}
+.qcards b{font-size:20px;line-height:1.2}
+.qcards .dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.qcards .dark span{color:#b8c4d1}
+.qphones{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.qphone{border:7px solid var(--ink);border-radius:30px;background:#fff;overflow:hidden;display:flex;flex-direction:column;min-height:400px}
+.qphone.low{margin-top:40px}
+.qp-head{display:flex;align-items:center;gap:7px;padding:12px 12px 10px;border-bottom:1px solid var(--line);font-size:13px;font-weight:700}
+.qp-head span{font-weight:400;color:var(--mute2)}
+.qp-q{width:18px;height:18px}
+.qp-body{flex:1;padding:12px 10px;display:flex;flex-direction:column;gap:9px;font-size:12px;line-height:1.4}
+.qp-user{align-self:flex-end;max-width:85%;padding:8px 10px;border-radius:14px 14px 4px 14px;background:var(--ink);color:#fff}
+.qp-bot{align-self:flex-start;max-width:92%;padding:8px 10px;border-radius:14px 14px 14px 4px;background:var(--mint);color:var(--ink2)}
+.qp-voice{align-self:flex-start;display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:14px;background:var(--mint);width:80%}
+.qp-foot{margin-top:auto;text-align:center;font-size:11px;color:var(--mute2)}
+.qp-chart{border:1px solid var(--frame);border-radius:12px;padding:8px}
+.qp-chart span{display:block;font-size:11px;color:var(--mute2);margin-bottom:4px}
+.qp-link{font-weight:700;color:var(--teal)}
+.qp-doc{display:flex;align-items:center;gap:10px;border:1px solid var(--frame);border-radius:12px;padding:10px}
+.qp-doc i{font-style:normal;width:34px;height:42px;border-radius:6px;background:var(--ink);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.qp-doc div{display:flex;flex-direction:column;gap:2px}
+.qp-doc span{font-size:11px;color:var(--mute2)}
+.qp-btn{text-align:center;padding:9px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700}
+@media (max-width:720px){.qphones{grid-template-columns:1fr;max-width:300px;margin:0 auto}.qphone.low{margin-top:0}.qcards{grid-template-columns:1fr}}
